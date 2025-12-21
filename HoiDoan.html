@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Giáo xứ Ngũ Phúc - Các Hội Đoàn</title>
+<!-- Fonts and Icons -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "accent-gold": "#C5A059",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "0.5rem", "lg": "0.75rem", "xl": "1rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom styles for subtle animations and details */
+        .ministry-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .ministry-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] font-display min-h-screen flex flex-col">
+<!-- Top Navigation Bar -->
+<div class="w-full border-b border-[#f0f2f4] bg-white sticky top-0 z-50">
+<div class="max-w-[1440px] mx-auto">
+<header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-[#f0f2f4] dark:bg-background-dark/95 dark:border-white/10 shadow-sm">
+  <div class="px-20 mx-auto max-w-7xl">
+    <div class="flex h-20 items-center justify-between gap-4">
+
+      <!-- Logo Area -->
+      <a class="flex items-center gap-3 text-[#111418] dark:text-white shrink-0 group" href="#">
+        <div class="size-10 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+          <span class="material-symbols-outlined text-2xl">church</span>
+        </div>
+        <h1 class="text-lg font-bold tracking-[-0.015em]">
+          Giáo xứ Ngũ Phúc
+        </h1>
+      </a>
+
+      <!-- Desktop Navigation (luôn hiển thị) -->
+      <nav class="flex items-center gap-1">
+        <a href="./index.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Trang chủ</a>
+        <a href="./About.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Giới thiệu</a>
+        <a href="./news.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Tin tức</a>
+        <a href="./calendar.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Lịch</a>
+        <a href="./HoiDoan.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Đoàn thể</a>
+        <a href="./document.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Thư viện</a>
+        <a href="./signup.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Đăng ký</a>
+        <a href="./contact.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Liên hệ</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-3">
+        <button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary hover:bg-primary-dark text-white shadow-md">
+          <span class="material-symbols-outlined">campaign</span>
+        </button>
+        <button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary hover:bg-primary-dark text-white shadow-md">
+          <span class="material-symbols-outlined">person</span>
+        </button>
+        <button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary hover:bg-primary-dark text-white shadow-md">
+          <span class="material-symbols-outlined">settings</span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button (giữ element, bỏ responsive) -->
+      <button class="p-2 text-gray-600 dark:text-white">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+
+    </div>
+  </div>
+</header>
+</div>
+</div>
+<!-- Main Content -->
+<main class="flex-grow w-full bg-background-light">
+<div class="max-w-[1440px] mx-auto flex flex-col">
+<!-- Hero Section -->
+<div class="px-4 md:px-10 py-6 md:py-10">
+<div class="flex min-h-[400px] md:min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat rounded-xl items-center justify-center p-6 md:p-10 relative overflow-hidden group" data-alt="Group of people holding hands in a circle praying outdoors sunset" style='background-image: linear-gradient(rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.6) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuDM-wQ2ZfPgTqE-G8Y1QEK8xnhWIdj7972cGvfLJYjDPxToVpstaBwa-XE1pMkTA-xbOywXAnUXiKAilBq_xqJKmy1_vplGQ3HgE0ozJAmL_tfSYEncXTYloK6fDvXEN2ANbgn3QO_AwjarWDPcm9zuqYMDZXQLH2MfHMg-ZgPBeryXEFzte5pyHpPI2vJsbjwHCjMrm8gGrkd00s_6dQzOwBDzLWQkePsL2mIkEjaEE5ORa6ZvDxvIfTEy1lE9bkkPWPmFD9KZuSk");'>
+<div class="flex flex-col gap-4 text-center z-10 max-w-3xl">
+<span class="text-accent-gold font-bold tracking-widest uppercase text-sm">Cộng đoàn Đức tin</span>
+<h1 class="text-white text-4xl md:text-6xl font-black leading-tight tracking-[-0.033em]">
+                            Phục Vụ Trong Yêu Thương
+                        </h1>
+<h2 class="text-gray-200 text-base md:text-lg font-normal leading-relaxed max-w-2xl mx-auto">
+                            Cùng nhau xây dựng cộng đoàn đức tin vững mạnh qua các hoạt động tông đồ và bác ái. Mỗi người một nén bạc, cùng nhau làm sáng danh Chúa.
+                        </h2>
+</div>
+<div class="flex gap-4 z-10 mt-4">
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary hover:bg-blue-600 transition-colors text-white text-base font-bold leading-normal tracking-[0.015em] shadow-lg">
+<span class="truncate">Tham gia ngay</span>
+</button>
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/30 transition-colors text-white text-base font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Tìm hiểu thêm</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Tabs / Filter -->
+<div class="px-4 md:px-10 pb-8 sticky top-[72px] z-40 bg-background-light/95 backdrop-blur-sm">
+<div class="border-b border-[#dbe0e6]">
+<div class="flex gap-8 overflow-x-auto no-scrollbar">
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-primary text-primary pb-3 pt-4 px-2 min-w-fit cursor-pointer" href="#">
+<p class="text-sm md:text-base font-bold leading-normal tracking-[0.015em]">Tất cả</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#617589] hover:text-[#111418] pb-3 pt-4 px-2 min-w-fit cursor-pointer transition-colors" href="#">
+<p class="text-sm md:text-base font-medium leading-normal tracking-[0.015em]">Phụng vụ</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#617589] hover:text-[#111418] pb-3 pt-4 px-2 min-w-fit cursor-pointer transition-colors" href="#">
+<p class="text-sm md:text-base font-medium leading-normal tracking-[0.015em]">Xã hội &amp; Bác ái</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#617589] hover:text-[#111418] pb-3 pt-4 px-2 min-w-fit cursor-pointer transition-colors" href="#">
+<p class="text-sm md:text-base font-medium leading-normal tracking-[0.015em]">Giáo dục</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-b-transparent text-[#617589] hover:text-[#111418] pb-3 pt-4 px-2 min-w-fit cursor-pointer transition-colors" href="#">
+<p class="text-sm md:text-base font-medium leading-normal tracking-[0.015em]">Giới trẻ</p>
+</a>
+</div>
+</div>
+</div>
+<!-- Ministry Grid -->
+<div class="px-4 md:px-10 pb-16">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+<!-- Card 1 -->
+<div class="ministry-card flex flex-col bg-white rounded-xl overflow-hidden border border-[#f0f2f4]">
+<div class="w-full aspect-[4/3] bg-center bg-no-repeat bg-cover relative" data-alt="Choir singing in church with robes" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB2e4Ok7Qtlg0IU7DCwoyV4FdJKELiOgpUBeuyMovprZ1N0YvP70XGzkucmr5OMifVXLc-_5B6K7iPMMwYQVCzZWVFeO7xN3VyDkCoy5p15BePqlGDZvd_rf7mJQEomN1eEKmbQUgDtSMh3pjlxApxi-K8cySK0okCkJzBvCjj4NZZpf8UjmXZXyjHAXoa_AOw1v6IDP4ycdfqU_Z3Ni0HC5EQa5drGSWpYrjEMhVAYqKS6yc4Gy3a-7OUjUFHhEkxBxPkmOFQ0vEA");'>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur rounded-full p-2 text-primary shadow-sm">
+<span class="material-symbols-outlined text-xl">music_note</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-3">
+<div>
+<h3 class="text-[#111418] text-lg font-bold leading-normal mb-1">Ca Đoàn Têrêsa</h3>
+<span class="inline-block px-2 py-1 bg-blue-50 text-primary text-xs font-semibold rounded mb-2">Phụng vụ</span>
+<p class="text-[#617589] text-sm font-normal leading-relaxed line-clamp-2">
+                                    Hát khen ngợi Chúa, phục vụ thánh nhạc trong các thánh lễ trọng thể và ngày Chúa Nhật.
+                                </p>
+</div>
+<div class="mt-auto pt-2">
+<a class="text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                    Tìm hiểu thêm <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="ministry-card flex flex-col bg-white rounded-xl overflow-hidden border border-[#f0f2f4]">
+<div class="w-full aspect-[4/3] bg-center bg-no-repeat bg-cover relative" data-alt="Young people laughing and talking in a circle" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBc62ZNwlk5Iss6gKHYw-6p_2NK9mJLrQiiaptyWaPJ-J0pT3BywplpfZMLO20yS8fOIqe7PC6_HyUI9DXVVYrO8avSoJIVo5_2kwZWe-s3zD7_4H4hKAhU7s13VO15xOG3RovcJ3kuJZiDCghplboWj4xI5cWx1UGKUlYM803Acd-MFJwW_9lieScXxSDUycDRB7xM1qZ24EbMGb_i27HTyh0QvgbngO6AlrXGXEcdOwLw7Aevd73ywivibGAoGDm6dwhvVZDhlOw");'>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur rounded-full p-2 text-primary shadow-sm">
+<span class="material-symbols-outlined text-xl">diversity_3</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-3">
+<div>
+<h3 class="text-[#111418] text-lg font-bold leading-normal mb-1">Giới Trẻ Đa Minh</h3>
+<span class="inline-block px-2 py-1 bg-yellow-50 text-yellow-700 text-xs font-semibold rounded mb-2">Giới trẻ</span>
+<p class="text-[#617589] text-sm font-normal leading-relaxed line-clamp-2">
+                                    Xây dựng tình bạn và đức tin năng động cho người trẻ qua các buổi sinh hoạt và trại hè.
+                                </p>
+</div>
+<div class="mt-auto pt-2">
+<a class="text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                    Tìm hiểu thêm <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="ministry-card flex flex-col bg-white rounded-xl overflow-hidden border border-[#f0f2f4]">
+<div class="w-full aspect-[4/3] bg-center bg-no-repeat bg-cover relative" data-alt="Hands holding a heart shape or giving food" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCBWLZKtE1wt216h7Rkk1os17IEI1ytCeJ-xrPwMezWNyEF6MizZlj_PjuuvwSwmoSUeuMW4aTsBQKqaiGOnNQ6pVsp0djWIwX22-jSGuN_Z8IdzwKpoXbgPAXwJThCNXqktEH2Lz8Twdim4gD3eqIllUnub4mNFGKW4-C4CxOsoe1hKVz8AC_Ei_wemyc8TWc_nzjBaPpC0__2DAk0DZq7PIK4jztqLiSkVIjq8FtnzerUbakJ3IebLvz1FI-McOC04iTCFQH3nK0");'>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur rounded-full p-2 text-primary shadow-sm">
+<span class="material-symbols-outlined text-xl">volunteer_activism</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-3">
+<div>
+<h3 class="text-[#111418] text-lg font-bold leading-normal mb-1">Ban Caritas</h3>
+<span class="inline-block px-2 py-1 bg-green-50 text-green-700 text-xs font-semibold rounded mb-2">Xã hội &amp; Bác ái</span>
+<p class="text-[#617589] text-sm font-normal leading-relaxed line-clamp-2">
+                                    Chia sẻ yêu thương, giúp đỡ người nghèo, bệnh nhân và những hoàn cảnh khó khăn trong giáo xứ.
+                                </p>
+</div>
+<div class="mt-auto pt-2">
+<a class="text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                    Tìm hiểu thêm <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="ministry-card flex flex-col bg-white rounded-xl overflow-hidden border border-[#f0f2f4]">
+<div class="w-full aspect-[4/3] bg-center bg-no-repeat bg-cover relative" data-alt="Teacher explaining from a book to children" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDrY33OBN0FdqEwOg9MIAixlk09PCWXPKXZBNc6wy1c89n5Wc986WHk_e0ZnLFXw-nB8OkBxIq9xuTp1lNVu7Zr2uSFaiMiiQIznccSmHbFvb4csP7JJHekUo_hlr1KIVco91WyDk6O8ujPjZIwONucjc5WqIFfyP0ImVVmSe_-Bo_jCQmrHcs5DnQk_9Oi_sXdbymd6aeOpNBVe3nERlRups59-mztzB6SSgdHiLJAdoAwTx9DpbFsturm6R0zKQODA9N3j_uXhrI");'>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur rounded-full p-2 text-primary shadow-sm">
+<span class="material-symbols-outlined text-xl">menu_book</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-3">
+<div>
+<h3 class="text-[#111418] text-lg font-bold leading-normal mb-1">Giáo Lý Viên</h3>
+<span class="inline-block px-2 py-1 bg-purple-50 text-purple-700 text-xs font-semibold rounded mb-2">Giáo dục</span>
+<p class="text-[#617589] text-sm font-normal leading-relaxed line-clamp-2">
+                                    Ươm mầm và nuôi dưỡng đức tin cho thế hệ tương lai thông qua các lớp giáo lý Chúa Nhật.
+                                </p>
+</div>
+<div class="mt-auto pt-2">
+<a class="text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                    Tìm hiểu thêm <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 5 -->
+<div class="ministry-card flex flex-col bg-white rounded-xl overflow-hidden border border-[#f0f2f4]">
+<div class="w-full aspect-[4/3] bg-center bg-no-repeat bg-cover relative" data-alt="Women praying in church pews" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB3i6wA-lWFPEvKZEBWecNuKP44Jw-Xdhytzh5xo-VWr8b401wP1NQGUneUzwaMSVfjpmiIWWezR4FhrxvfGwXnSZkd2UiBfTaE0XEFSTTpUc-5EZzfdrkwaTW2Yd18Yhoaw8cUH1lsJLdLfp0sBNCcqCjbNUC0NdDeA4WNmnLV5pQGLkj38VFE7LAL6GjOVb3RSzqW9teZzcZnt_G1dKmPC7AN4yoY5QnF1v9_CXCnioklUamZSe7cKx0Qt23EmLJHRWyRf3SaW-k");'>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur rounded-full p-2 text-primary shadow-sm">
+<span class="material-symbols-outlined text-xl">family_restroom</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-3">
+<div>
+<h3 class="text-[#111418] text-lg font-bold leading-normal mb-1">Hội Các Bà Mẹ</h3>
+<span class="inline-block px-2 py-1 bg-pink-50 text-pink-700 text-xs font-semibold rounded mb-2">Xã hội &amp; Gia đình</span>
+<p class="text-[#617589] text-sm font-normal leading-relaxed line-clamp-2">
+                                    Cầu nguyện và hỗ trợ các gia đình trong giáo xứ, noi gương các thánh nữ.
+                                </p>
+</div>
+<div class="mt-auto pt-2">
+<a class="text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                    Tìm hiểu thêm <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 6 -->
+<div class="ministry-card flex flex-col bg-white rounded-xl overflow-hidden border border-[#f0f2f4]">
+<div class="w-full aspect-[4/3] bg-center bg-no-repeat bg-cover relative" data-alt="Rosary beads on a table with bible" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCPAbkGBiBuc6mQVQ5iqFV9HA0xbtCODwV3cn6zuiH_ajaDJ_xU5ehfLlxr6oqZcnlDZYY4kpz-J882VOCPVii_xyOf82zL1Onb2kbD2prrY-fnEowqi5aq8DPW2wWcr2qPwGvWWkK82SMC42TBjdSAA_yWUFtulBFnoYmy0AxU7MIhresrIWdD_Wmc9ojxP2FVfUVRhCoxFLBaIy8X2iFkQhTOvLh2llcqnkpYW6bTAjUx-Vco-B3VARdEeUN8w9xWYElLJ5T4Ank");'>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur rounded-full p-2 text-primary shadow-sm">
+<span class="material-symbols-outlined text-xl">church</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-3">
+<div>
+<h3 class="text-[#111418] text-lg font-bold leading-normal mb-1">Legio Mariae</h3>
+<span class="inline-block px-2 py-1 bg-blue-50 text-primary text-xs font-semibold rounded mb-2">Phụng vụ</span>
+<p class="text-[#617589] text-sm font-normal leading-relaxed line-clamp-2">
+                                    Đạo binh Đức Mẹ, hoạt động tông đồ giáo dân, thăm viếng và cầu nguyện cho người đau yếu.
+                                </p>
+</div>
+<div class="mt-auto pt-2">
+<a class="text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                    Tìm hiểu thêm <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 7 -->
+<div class="ministry-card flex flex-col bg-white rounded-xl overflow-hidden border border-[#f0f2f4]">
+<div class="w-full aspect-[4/3] bg-center bg-no-repeat bg-cover relative" data-alt="Priest holding chalice during mass" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDRqa4vxmT52fy4o-lvzRCDxPo_O6_OW26TDW15VAW10Fyjo6Mb-f9ik6KaOtfIXaiKqZJUqsmDFxyg4XZqWJTNf_QEukWxFQuogUIxA79dOOJiQe9ZopHOzx7rTrzYKiCOcPn1qUasTStscj2B5xkgzD0BUanJWMFWLYlHy0CoS-rLOOSZQRdzsB6uY9DKUUGnm1ru3_hPM4qg2yM5fI8CgDceMW-NxkoiKfIk25Sh8sdlYS_A7BWHOYCteg-8A2PZR00EnpuAq2c");'>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur rounded-full p-2 text-primary shadow-sm">
+<span class="material-symbols-outlined text-xl">person_celebrate</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-3">
+<div>
+<h3 class="text-[#111418] text-lg font-bold leading-normal mb-1">Ban Lễ Sinh</h3>
+<span class="inline-block px-2 py-1 bg-blue-50 text-primary text-xs font-semibold rounded mb-2">Phụng vụ</span>
+<p class="text-[#617589] text-sm font-normal leading-relaxed line-clamp-2">
+                                    Phục vụ bàn thờ Chúa trong các thánh lễ, rèn luyện đức tính kỷ luật và đạo đức.
+                                </p>
+</div>
+<div class="mt-auto pt-2">
+<a class="text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                    Tìm hiểu thêm <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+<!-- Card 8 -->
+<div class="ministry-card flex flex-col bg-white rounded-xl overflow-hidden border border-[#f0f2f4]">
+<div class="w-full aspect-[4/3] bg-center bg-no-repeat bg-cover relative" data-alt="Flowers decorating church altar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA3IfkniewXXwwMroGZ2MF9iyeousdrdwN8-RIEK8RqwJ-YZ2DyAyl4_HKAzUoHHduo9u5w65efHb0gcrMw4FArql_FIWWuG1G6MlShOFQyM5YPQ7n4bMSILn9Qmr45QbPrCL-Uth9QvtUorSIrwKZCwHjHpjN9BYhfowbgUMgJeKMI6E0Ic7qBa2sPEbFb8FRRvUQADVAhwa6bIk0s2NIrJFDoTwpvjMEX4FPK17i4zfs9yP83Gf6d44jm9w059J6Yttr3Hh8YtWg");'>
+<div class="absolute top-4 right-4 bg-white/90 backdrop-blur rounded-full p-2 text-primary shadow-sm">
+<span class="material-symbols-outlined text-xl">local_florist</span>
+</div>
+</div>
+<div class="p-5 flex flex-col flex-1 gap-3">
+<div>
+<h3 class="text-[#111418] text-lg font-bold leading-normal mb-1">Ban Khánh Tiết</h3>
+<span class="inline-block px-2 py-1 bg-green-50 text-green-700 text-xs font-semibold rounded mb-2">Hậu cần</span>
+<p class="text-[#617589] text-sm font-normal leading-relaxed line-clamp-2">
+                                    Trang trí nhà thờ, cắm hoa và chuẩn bị không gian trang nghiêm cho các ngày lễ lớn.
+                                </p>
+</div>
+<div class="mt-auto pt-2">
+<a class="text-primary text-sm font-bold flex items-center gap-1 hover:gap-2 transition-all" href="#">
+                                    Tìm hiểu thêm <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- CTA Section -->
+<div class="px-4 md:px-10 pb-16">
+<div class="bg-[#e7f1fc] dark:bg-[#1a2633] rounded-2xl overflow-hidden">
+<div class="flex flex-col md:flex-row items-center justify-between p-8 md:p-12 lg:p-16 gap-8">
+<div class="flex flex-col gap-4 max-w-2xl">
+<h2 class="text-[#111418] dark:text-white text-3xl md:text-4xl font-bold leading-tight">
+                                Bạn muốn tham gia phục vụ?
+                            </h2>
+<p class="text-[#617589] dark:text-gray-300 text-lg font-normal leading-relaxed">
+                                Mỗi đóng góp nhỏ đều mang lại ý nghĩa lớn cho cộng đoàn. Hãy đăng ký để trở thành tình nguyện viên và chia sẻ hồng ân Chúa ban.
+                            </p>
+<div class="flex flex-wrap gap-4 mt-2">
+<div class="flex items-center gap-2 text-[#111418] dark:text-white font-medium">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+                                    Kết nối cộng đồng
+                                </div>
+<div class="flex items-center gap-2 text-[#111418] dark:text-white font-medium">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+                                    Phát triển bản thân
+                                </div>
+<div class="flex items-center gap-2 text-[#111418] dark:text-white font-medium">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+                                    Sống đức tin
+                                </div>
+</div>
+</div>
+<div class="shrink-0">
+<button class="flex min-w-[180px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-14 px-8 bg-primary hover:bg-blue-600 transition-colors text-white text-lg font-bold leading-normal tracking-[0.015em] shadow-md">
+<span class="truncate">Đăng ký tình nguyện</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white border-t pt-16 pb-8 mt-16">
+  <div class="max-w-7xl mx-auto px-20">
+
+    <div class="grid grid-cols-4 gap-12 mb-12">
+
+      <!-- Info -->
+      <div class="space-y-4">
+        <div class="flex items-center gap-2 font-bold text-lg">
+          <span class="material-symbols-outlined text-primary">church</span>
+          Giáo xứ Ngũ Phúc
+        </div>
+        <p class="text-sm text-gray-600">
+          Cộng đoàn chào đón, tận tâm với đức tin, phục vụ và rao giảng Tin Mừng.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h4 class="font-bold mb-3">Liên kết nhanh</h4>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li>Lịch lễ</li>
+          <li>Bản tin Giáo xứ</li>
+          <li>Quyên góp trực tuyến</li>
+          <li>Đăng ký thành viên</li>
+          <li>Thư viện ảnh</li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-bold mb-3">Liên hệ</h4>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li>Hố Nai 3, Trảng Bom, Đồng Nai</li>
+          <li>(028) 3845 6789</li>
+          <li>giaoxu@nguphuc.org</li>
+        </ul>
+      </div>
+
+      <!-- Office -->
+      <div>
+        <h4 class="font-bold mb-3">Giờ văn phòng</h4>
+        <p class="text-sm text-gray-600">
+          Thứ 2 - Thứ 6: 8:00 - 17:00<br>
+          Thứ 7: 8:00 - 12:00<br>
+          Chúa nhật: Đóng cửa
+        </p>
+      </div>
+
+    </div>
+
+    <div class="border-t pt-6 flex justify-between text-xs text-gray-500">
+      <p>© 2023 Giáo xứ Ngũ Phúc. Bảo lưu mọi quyền.</p>
+      <div class="flex gap-6">
+        <span>Chính sách bảo mật</span>
+        <span>Điều khoản dịch vụ</span>
+        <span>Sơ đồ trang</span>
+      </div>
+    </div>
+
+  </div>
+</footer>
+</body></html>

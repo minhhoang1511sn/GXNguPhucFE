@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Our Parish - Giáo xứ Ngũ Phúc</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts & Icons -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-dark": "#0e62b6",
+                        "accent-gold": "#D4AF37",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white overflow-x-hidden flex flex-col min-h-screen">
+<!-- Navigation -->
+<nav class="sticky top-0 z-50 w-full bg-white dark:bg-[#1a2632] border-b border-[#f0f2f4] dark:border-gray-700 shadow-sm">
+<div class="max-w-[1440px] mx-auto px-4 md:px-10 py-3">
+<div class="flex items-center justify-between">
+<!-- Logo -->
+<header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-[#f0f2f4] dark:bg-background-dark/95 dark:border-white/10 shadow-sm">
+  <div class="px-20 mx-auto max-w-7xl">
+    <div class="flex h-20 items-center justify-between gap-4">
+
+      <!-- Logo Area -->
+      <a class="flex items-center gap-3 text-[#111418] dark:text-white shrink-0 group" href="#">
+        <div class="size-10 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+          <span class="material-symbols-outlined text-2xl">church</span>
+        </div>
+        <h1 class="text-lg font-bold tracking-[-0.015em]">
+          Giáo xứ Ngũ Phúc
+        </h1>
+      </a>
+
+      <!-- Desktop Navigation (luôn hiển thị) -->
+      <nav class="flex items-center gap-1">
+        <a href="./index.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Trang chủ</a>
+        <a href="./About.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Giới thiệu</a>
+        <a href="./news.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Tin tức</a>
+        <a href="./calendar.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Lịch</a>
+        <a href="./HoiDoan.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Đoàn thể</a>
+        <a href="./document.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Thư viện</a>
+        <a href="./signup.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Đăng ký</a>
+        <a href="./contact.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Liên hệ</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-3">
+        <button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary hover:bg-primary-dark text-white shadow-md">
+          <span class="material-symbols-outlined">campaign</span>
+        </button>
+        <button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary hover:bg-primary-dark text-white shadow-md">
+          <span class="material-symbols-outlined">person</span>
+        </button>
+        <button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary hover:bg-primary-dark text-white shadow-md">
+          <span class="material-symbols-outlined">settings</span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button (giữ element, bỏ responsive) -->
+      <button class="p-2 text-gray-600 dark:text-white">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+
+    </div>
+  </div>
+</header>
+<!-- Mobile Menu Button -->
+<button class="md:hidden text-[#111418] dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="relative w-full">
+<div class="w-full h-[320px] md:h-[400px] relative bg-cover bg-center" data-alt="Panoramic view of a modern catholic church altar with golden lights" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBOXTOMksZn3dkkGY5-UfRSCR6Nf6nUzSGxO0Zfmt42fuWENfVQ1lOvtbrSsMJZ-Kev9Q3Yvghe0EOc9fmmCC5PwIQhhtxstR8qoKxATzXSmvwMmlJ1dwv-O-T6XcSraFTSCsTDK_59usNnfQj5vvOrHI_KS9_hfq8dZdIk2eJDX8AQCansePgpmAKsFIqLagjuWJ56vYZr8_gJVyEYU8T_s8fqM9ME4fiNg0T4ujcflYYgbs9ukgFKUU_pdw7Bh6gbs7W5G4QnxsM");'>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent"></div>
+<div class="absolute bottom-0 left-0 w-full p-6 md:p-12 lg:p-20 max-w-[1440px] mx-auto flex flex-col justify-end h-full">
+<span class="text-accent-gold font-medium tracking-widest text-sm uppercase mb-2">Welcome to our community</span>
+<h1 class="text-white text-4xl md:text-5xl font-bold leading-tight mb-2 drop-shadow-lg">Về Giáo Xứ</h1>
+<p class="text-gray-200 text-lg md:text-xl font-medium">About Our Parish</p>
+</div>
+</div>
+</header>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-4 md:px-10 py-8">
+<!-- Tabs Navigation -->
+<div class="mb-10 border-b border-gray-200 dark:border-gray-700 overflow-x-auto">
+<div class="flex min-w-max gap-8 px-2">
+<a class="group flex flex-col items-center justify-center border-b-[3px] border-transparent pb-4 pt-2 cursor-pointer" href="#">
+<p class="text-gray-500 dark:text-gray-400 group-hover:text-primary text-sm font-bold tracking-[0.015em] transition-colors">Lịch sử (History)</p>
+</a>
+<a class="group flex flex-col items-center justify-center border-b-[3px] border-transparent pb-4 pt-2 cursor-pointer" href="#">
+<p class="text-gray-500 dark:text-gray-400 group-hover:text-primary text-sm font-bold tracking-[0.015em] transition-colors">Tầm nhìn (Vision)</p>
+</a>
+<a class="flex flex-col items-center justify-center border-b-[3px] border-primary pb-4 pt-2 cursor-pointer" href="#">
+<p class="text-primary text-sm font-bold tracking-[0.015em]">Quý Cha &amp; Tu sĩ (Clergy)</p>
+</a>
+<a class="group flex flex-col items-center justify-center border-b-[3px] border-transparent pb-4 pt-2 cursor-pointer" href="#">
+<p class="text-gray-500 dark:text-gray-400 group-hover:text-primary text-sm font-bold tracking-[0.015em] transition-colors">Tổ chức (Organization)</p>
+</a>
+<a class="group flex flex-col items-center justify-center border-b-[3px] border-transparent pb-4 pt-2 cursor-pointer" href="#">
+<p class="text-gray-500 dark:text-gray-400 group-hover:text-primary text-sm font-bold tracking-[0.015em] transition-colors">Cơ sở vật chất (Facilities)</p>
+</a>
+</div>
+</div>
+<!-- Section Intro -->
+<div class="mb-10 max-w-3xl">
+<h2 class="text-[#111418] dark:text-white text-3xl font-bold leading-tight mb-3">Quý Cha &amp; Tu sĩ phục vụ</h2>
+<p class="text-gray-500 dark:text-gray-400 text-lg">Meet the dedicated clergy and religious sisters who serve the spiritual needs of Giáo xứ Ngũ Phúc.</p>
+</div>
+<!-- Priests Grid -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-16">
+<!-- Card 1: Parish Priest -->
+<div class="group flex flex-col bg-white dark:bg-[#1a2632] rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700">
+<div class="relative w-full aspect-[3/4] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Portrait of Father Nguyen Van An smiling in vestments" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC1s07VdOYtQfjhA1lz2w_q2TnWG8L7zzP280GhQLCHGXBTkoLcnntyfAo-8SoxSN61z_3HvYcTNKtkfhdg9CKG_rsD3EYoqYtYDKlq9sZ7rAVfhxGARjhQGs3i3Hq_sXvfiYqGaCG-OeTohy0B5liVpz7onn0-7Gxc45Yj77f8syzwMilKZn4qzEDhz5THNTA4aGklxBt17gTPVuBPjNWqxsC3lZSDKt1Y5XlfGc5l0jxprYIUUNly8qCGtn0ucVHhNPTeBij5Sic");'></div>
+<div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/60 to-transparent p-4">
+<span class="inline-block px-2 py-1 bg-accent-gold text-white text-xs font-bold rounded mb-1">Pastor</span>
+</div>
+</div>
+<div class="p-5 flex flex-col gap-1">
+<h3 class="text-[#111418] dark:text-white text-lg font-bold">Lm. Giuse Nguyễn Văn An</h3>
+<p class="text-primary text-sm font-medium">Chánh Xứ (Parish Priest)</p>
+<div class="mt-3 flex gap-2 text-gray-400">
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined text-[20px]">mail</span></button>
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined text-[20px]">call</span></button>
+</div>
+</div>
+</div>
+<!-- Card 2: Assistant Priest -->
+<div class="group flex flex-col bg-white dark:bg-[#1a2632] rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700">
+<div class="relative w-full aspect-[3/4] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Portrait of Father Tran Van Binh in clerical collar" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuADV1SqirlG8_5gn9Or5H6PfrP53TJMJNEd81_SO_R9ZYfbzC-5ukP1XuqLmWbt83k_OWErONtOIAYCCGvwfFD0qAW1DfHJYpcqe6QnOeJfCVe0-uNaPiDpTKHPnKzq6DLy-R8Ktl8P63VnRKCVWmFM-RwV6qKctfDTEj2By1lsVAFTfClQGpr9s-4yBDxv-b_z_fKATAUFdoG9PTdzr7OoSUaKJp6IPGZP7E0CEMMc8WDwoZ5ohJaqgo8RMrZCtbMk2GpFggWBqnA");'></div>
+</div>
+<div class="p-5 flex flex-col gap-1">
+<h3 class="text-[#111418] dark:text-white text-lg font-bold">Lm. Phêrô Trần Văn Bình</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">Phó Xứ (Assistant Priest)</p>
+<div class="mt-3 flex gap-2 text-gray-400">
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined text-[20px]">mail</span></button>
+</div>
+</div>
+</div>
+<!-- Card 3: Deacon -->
+<div class="group flex flex-col bg-white dark:bg-[#1a2632] rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700">
+<div class="relative w-full aspect-[3/4] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Portrait of Deacon Le Van Dung" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA5Sqd30_inDgWloFdIB9BUiIAlat3BsgoM_k_f8lLIkSxYVFKJwyHa2Qjsvkz5zpRd9ZET1HGM0G0ytlHhoXcU-JcylRcgdV_ayn47ZiiIflXZc8xyPVmCViBvsXTSQNKnFf7vkIe51ffHmmXeteUkTM-Ws4NvOlHN36Fv62Qy7d9_2ah7ql8cv94v_E437Zsi0-qq-CvQiNTOD990sT88F3UrMczPJJvAOzhXNt1OzWcMFl3MrNdSEoE4PGsUUNP5oWbK2FFxOrE");'></div>
+</div>
+<div class="p-5 flex flex-col gap-1">
+<h3 class="text-[#111418] dark:text-white text-lg font-bold">Thầy Phó Tế Lê Văn Dũng</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">Phó Tế (Deacon)</p>
+<div class="mt-3 flex gap-2 text-gray-400">
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined text-[20px]">mail</span></button>
+</div>
+</div>
+</div>
+<!-- Card 4: Religious Sister -->
+<div class="group flex flex-col bg-white dark:bg-[#1a2632] rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow duration-300 border border-gray-100 dark:border-gray-700">
+<div class="relative w-full aspect-[3/4] overflow-hidden">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Portrait of Sister Mary Celine in habit" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBYl0d-fCcLRkzl57g-1Fa_KJTcSD_PLCy8UMkDuT30IO6fmb8PILb32C87SysuQ5cggCNI6CEdbw4su-K5sk7g51E1SsNJwTZKDwSY1wiRr18b36fC5hT2DBZ3m9odVF-a83AmLmQKIjYBmuMk3l4cTqPDT3HlAYve3G9SLd20_3-qRbJOZc_Q8Ph-HmIxgHJzBxYblwgrPjVHFDx7P5CPCqwRfOjBaV90xQ6Y9fDz7Ut4GegQ-5sMjnitiq8_D5NHAiq7bq_hKVU");'></div>
+</div>
+<div class="p-5 flex flex-col gap-1">
+<h3 class="text-[#111418] dark:text-white text-lg font-bold">Sr. Maria Celine</h3>
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">Phụ trách Giáo Lý (Catechism)</p>
+<div class="mt-3 flex gap-2 text-gray-400">
+<button class="p-1 hover:text-primary"><span class="material-symbols-outlined text-[20px]">mail</span></button>
+</div>
+</div>
+</div>
+</div>
+<!-- Additional Info / Quote Block -->
+<div class="rounded-2xl bg-primary/5 border border-primary/10 p-8 md:p-12 text-center my-8">
+<span class="material-symbols-outlined text-4xl text-accent-gold mb-4">format_quote</span>
+<p class="text-xl md:text-2xl font-serif italic text-[#111418] dark:text-white max-w-4xl mx-auto leading-relaxed">
+                "The priesthood is the love of the heart of Jesus. When you see a priest, think of our Lord Jesus Christ."
+            </p>
+<p class="mt-4 text-sm font-bold text-primary uppercase tracking-wider">— St. John Vianney</p>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white border-t pt-16 pb-8 mt-16">
+  <div class="max-w-7xl mx-auto px-20">
+
+    <div class="grid grid-cols-4 gap-12 mb-12">
+
+      <!-- Info -->
+      <div class="space-y-4">
+        <div class="flex items-center gap-2 font-bold text-lg">
+          <span class="material-symbols-outlined text-primary">church</span>
+          Giáo xứ Ngũ Phúc
+        </div>
+        <p class="text-sm text-gray-600">
+          Cộng đoàn chào đón, tận tâm với đức tin, phục vụ và rao giảng Tin Mừng.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h4 class="font-bold mb-3">Liên kết nhanh</h4>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li>Lịch lễ</li>
+          <li>Bản tin Giáo xứ</li>
+          <li>Quyên góp trực tuyến</li>
+          <li>Đăng ký thành viên</li>
+          <li>Thư viện ảnh</li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-bold mb-3">Liên hệ</h4>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li>Hố Nai 3, Trảng Bom, Đồng Nai</li>
+          <li>(028) 3845 6789</li>
+          <li>giaoxu@nguphuc.org</li>
+        </ul>
+      </div>
+
+      <!-- Office -->
+      <div>
+        <h4 class="font-bold mb-3">Giờ văn phòng</h4>
+        <p class="text-sm text-gray-600">
+          Thứ 2 - Thứ 6: 8:00 - 17:00<br>
+          Thứ 7: 8:00 - 12:00<br>
+          Chúa nhật: Đóng cửa
+        </p>
+      </div>
+
+    </div>
+
+    <div class="border-t pt-6 flex justify-between text-xs text-gray-500">
+      <p>© 2023 Giáo xứ Ngũ Phúc. Bảo lưu mọi quyền.</p>
+      <div class="flex gap-6">
+        <span>Chính sách bảo mật</span>
+        <span>Điều khoản dịch vụ</span>
+        <span>Sơ đồ trang</span>
+      </div>
+    </div>
+
+  </div>
+</footer>
+</body></html>

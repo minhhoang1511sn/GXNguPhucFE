@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Giáo xứ Ngũ Phúc - Tài Liệu Mục Vụ</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "primary-gold": "#D4AF37",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+        
+        details > summary {
+            list-style: none;
+        }
+        details > summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-[#111418] font-display antialiased flex flex-col min-h-screen">
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-[#f0f2f4] dark:bg-background-dark/95 dark:border-white/10 shadow-sm">
+  <div class="px-20 mx-auto max-w-7xl">
+    <div class="flex h-20 items-center justify-between gap-4">
+
+      <!-- Logo Area -->
+      <a class="flex items-center gap-3 text-[#111418] dark:text-white shrink-0 group" href="#">
+        <div class="size-10 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+          <span class="material-symbols-outlined text-2xl">church</span>
+        </div>
+        <h1 class="text-lg font-bold tracking-[-0.015em]">
+          Giáo xứ Ngũ Phúc
+        </h1>
+      </a>
+
+      <!-- Desktop Navigation (luôn hiển thị) -->
+      <nav class="flex items-center gap-1">
+        <a href="./index.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Trang chủ</a>
+        <a href="./About.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Giới thiệu</a>
+        <a href="./news.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Tin tức</a>
+        <a href="./calendar.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Lịch</a>
+        <a href="./HoiDoan.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Đoàn thể</a>
+        <a href="./document.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Thư viện</a>
+        <a href="./signup.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Đăng ký</a>
+        <a href="./contact.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Liên hệ</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-3">
+        <button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary hover:bg-primary-dark text-white shadow-md">
+          <span class="material-symbols-outlined">campaign</span>
+        </button>
+        <button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary hover:bg-primary-dark text-white shadow-md">
+          <span class="material-symbols-outlined">person</span>
+        </button>
+        <button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary hover:bg-primary-dark text-white shadow-md">
+          <span class="material-symbols-outlined">settings</span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button (giữ element, bỏ responsive) -->
+      <button class="p-2 text-gray-600 dark:text-white">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+
+    </div>
+  </div>
+</header>
+<!-- Hero Section -->
+<section class="relative bg-white">
+<div class="relative w-full h-[320px] md:h-[400px] flex items-center justify-center bg-cover bg-center overflow-hidden" data-alt="Abstract soft light shining through church stained glass windows" style="background-image: linear-gradient(rgba(19, 127, 236, 0.6), rgba(0, 0, 0, 0.6)), url('https://lh3.googleusercontent.com/aida-public/AB6AXuCdjgBKfJzee_1YHSbkKe-mQ6w7UT_kX1Os2zmMgSkMaro1IlZplp5KuoJ05akk9hlYt_ySnSb5Gz4fyk5RU5QORvj70zR6UP7m2eMcR_NduYR1dbwWCBbGkphkZjeaEACkts_g1sJedf1Tb_j67y2DuX-l5XKEKd08ccYxkNqhMXCsaJHc2EU-OvUPCNfGRUvBUk5ctboTJwaHtQSopMml1vxJaqC7zqXeNtZ8NzHjFUJ37KHe1YczxcEcA2LSGsoJ0MYDYUqZTGU');">
+<div class="absolute inset-0 bg-black/20"></div>
+<div class="relative z-10 flex flex-col items-center text-center px-4 max-w-3xl">
+<span class="bg-primary-gold/90 text-white text-xs font-bold px-3 py-1 rounded-full mb-4 uppercase tracking-wider">Thư viện Giáo Xứ</span>
+<h1 class="text-white text-4xl md:text-5xl font-black tracking-tight mb-4 drop-shadow-md">
+                    Tài Liệu &amp; Nguồn Tin
+                </h1>
+<p class="text-white/90 text-base md:text-lg font-medium max-w-xl mb-8 leading-relaxed drop-shadow-sm">
+                    Nơi lưu trữ các bài giảng, suy niệm lời Chúa hằng ngày và các văn bản hành chính phục vụ cộng đoàn dân Chúa.
+                </p>
+<div class="w-full max-w-lg bg-white rounded-full p-2 flex items-center shadow-lg">
+<span class="material-symbols-outlined text-gray-400 pl-3">search</span>
+<input class="flex-1 border-none focus:ring-0 text-gray-800 placeholder:text-gray-400 text-base h-10 bg-transparent" placeholder="Tìm kiếm bài giảng, thông báo..." type="text"/>
+<button class="bg-primary hover:bg-blue-600 text-white rounded-full h-10 px-6 font-bold text-sm transition-colors">
+                        Tìm
+                    </button>
+</div>
+</div>
+</div>
+</section>
+<!-- Main Content -->
+<main class="flex-grow w-full max-w-[1440px] mx-auto px-4 md:px-6 py-12">
+<div class="flex flex-col lg:flex-row gap-10">
+<!-- Left Column: Main Content -->
+<div class="flex-1 flex flex-col gap-8">
+<!-- Section Header -->
+<div class="flex flex-col gap-2">
+<h2 class="text-[#111418] text-3xl font-bold tracking-tight">Tài Liệu Mục Vụ</h2>
+<p class="text-[#617589] text-base">Chọn danh mục bên dưới để xem chi tiết các nguồn tài liệu.</p>
+</div>
+<!-- Accordions -->
+<div class="flex flex-col gap-4">
+<!-- Accordion 1: Daily Readings -->
+<details class="group bg-white rounded-xl border border-[#dbe0e6] shadow-sm overflow-hidden" open="">
+<summary class="flex cursor-pointer items-center justify-between gap-4 p-5 bg-white hover:bg-gray-50 transition-colors select-none">
+<div class="flex items-center gap-4">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">menu_book</span>
+</div>
+<div>
+<h3 class="text-[#111418] text-lg font-bold">Phụng Vụ Lời Chúa (Daily Readings)</h3>
+<p class="text-[#617589] text-sm">Suy niệm và bài đọc hằng ngày</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#617589] transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-5 border-t border-[#f0f2f4] bg-gray-50/50 flex flex-col gap-4">
+<!-- Card 1 -->
+<div class="flex flex-col md:flex-row gap-4 bg-white rounded-lg p-4 shadow-sm border border-[#e5e7eb] hover:shadow-md transition-shadow">
+<div class="w-full md:w-48 h-32 bg-gray-200 rounded-lg bg-cover bg-center shrink-0" data-alt="Open bible on a wooden table with soft lighting" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuA3TrQL06RwRl6POIl24E_wNamUNfHMGDfLKTKZ_8-UGydJnJOp4acCR1xeRaJqEaufG9UhTi6Vx_-ww8IyFqcyqB4mdngRTBlKQ0ipVsIsDns__1H3BmONg4CeXqvrEvdZqQsiVsO2DziiC4mBFoDkoOpo4REg6aGpNASivSu8tQfbrCCG4-7Gjt2SCRT-7_3uceoSvpBC60XDeElO_6jrWThNSde-d2ZiC2mjBA_Wmbleem9vw-pNZDyXCtGNkQXrNBRYQdlxY20');">
+</div>
+<div class="flex flex-col justify-between flex-1 gap-3">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-0.5 rounded">Thường Niên</span>
+<span class="text-[#617589] text-xs font-medium">10 Tháng 10, 2023</span>
+</div>
+<h4 class="text-[#111418] text-lg font-bold leading-tight">Thứ Ba Tuần XXVII Thường Niên</h4>
+<p class="text-[#617589] text-sm mt-1 line-clamp-2">Tin Mừng: Lc 10, 38-42 - "Martha, Martha, con lo lắng bối rối về nhiều chuyện quá."</p>
+</div>
+<div class="flex justify-start">
+<button class="flex items-center gap-2 text-primary text-sm font-bold hover:underline">
+<span>Đọc Chi Tiết</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="flex flex-col md:flex-row gap-4 bg-white rounded-lg p-4 shadow-sm border border-[#e5e7eb] hover:shadow-md transition-shadow">
+<div class="w-full md:w-48 h-32 bg-gray-200 rounded-lg bg-cover bg-center shrink-0" data-alt="Priest holding a chalice during mass" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDbrvLQheOFHJOO8eglTOi2ri70BiVg4grn1_F_tw6i7VZEWtuGF8oKLOcvX3Z6oB7fPwxno5ZptdPEav43kFmYQVmhN0Yfjd1p768sNngY6baVzYA-5pQP7ShhP_hIB4F-aqZldxwBjzBLYpQHcKy2MCBmbYABA5Nn-okXE4ATlN_bUhle9qZwZTY9IMVMtlKGQS4PwZknJvv95EF96Dg7MKKXqc6sa7n6rCiXqzp1TCTsRTBvSbUKhtHAzOOukkdKlnayX_BSbX4');">
+</div>
+<div class="flex flex-col justify-between flex-1 gap-3">
+<div>
+<div class="flex items-center gap-2 mb-1">
+<span class="bg-red-100 text-red-700 text-xs font-bold px-2 py-0.5 rounded">Lễ Nhớ</span>
+<span class="text-[#617589] text-xs font-medium">09 Tháng 10, 2023</span>
+</div>
+<h4 class="text-[#111418] text-lg font-bold leading-tight">Thứ Hai Tuần XXVII - Lễ Thánh Đi-ô-ni-si-ô</h4>
+<p class="text-[#617589] text-sm mt-1 line-clamp-2">Bài đọc 1: Gn 1,1 - 2,2.11. Tin Mừng: Lc 10,25-37. "Ông muốn thử thách Chúa Giêsu."</p>
+</div>
+<div class="flex justify-start">
+<button class="flex items-center gap-2 text-primary text-sm font-bold hover:underline">
+<span>Đọc Chi Tiết</span>
+<span class="material-symbols-outlined text-base">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</details>
+<!-- Accordion 2: Sermons -->
+<details class="group bg-white rounded-xl border border-[#dbe0e6] shadow-sm overflow-hidden">
+<summary class="flex cursor-pointer items-center justify-between gap-4 p-5 bg-white hover:bg-gray-50 transition-colors select-none">
+<div class="flex items-center gap-4">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">podcasts</span>
+</div>
+<div>
+<h3 class="text-[#111418] text-lg font-bold">Bài Giảng Chúa Nhật (Weekly Sermons)</h3>
+<p class="text-[#617589] text-sm">Video và Audio các bài giảng lễ</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#617589] transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-5 border-t border-[#f0f2f4] bg-gray-50/50 flex flex-col gap-4">
+<!-- Sermon Card -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white rounded-lg p-4 shadow-sm border border-[#e5e7eb]">
+<div class="flex items-center gap-4 w-full sm:w-auto">
+<div class="bg-gray-100 h-12 w-12 rounded-full flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined">play_arrow</span>
+</div>
+<div>
+<h4 class="text-[#111418] font-bold text-base">CN XXVII Thường Niên A - Vườn Nho Của Chúa</h4>
+<p class="text-[#617589] text-sm">Lm. Giuse Nguyễn Văn An • 15 phút</p>
+</div>
+</div>
+<div class="flex gap-2 w-full sm:w-auto justify-end">
+<button class="flex items-center justify-center gap-2 px-4 py-2 bg-[#f0f2f4] text-[#111418] text-sm font-bold rounded-lg hover:bg-gray-200 transition-colors w-full sm:w-auto">
+<span class="material-symbols-outlined text-base">download</span>
+<span>Tải Về</span>
+</button>
+<button class="flex items-center justify-center gap-2 px-4 py-2 bg-primary text-white text-sm font-bold rounded-lg hover:bg-blue-600 transition-colors w-full sm:w-auto">
+<span class="material-symbols-outlined text-base">headphones</span>
+<span>Nghe</span>
+</button>
+</div>
+</div>
+<!-- Sermon Card 2 -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 bg-white rounded-lg p-4 shadow-sm border border-[#e5e7eb]">
+<div class="flex items-center gap-4 w-full sm:w-auto">
+<div class="bg-gray-100 h-12 w-12 rounded-full flex items-center justify-center text-primary shrink-0">
+<span class="material-symbols-outlined">play_arrow</span>
+</div>
+<div>
+<h4 class="text-[#111418] font-bold text-base">CN XXVI Thường Niên A - Hai Người Con</h4>
+<p class="text-[#617589] text-sm">Lm. Phêrô Trần Văn Bình • 18 phút</p>
+</div>
+</div>
+<div class="flex gap-2 w-full sm:w-auto justify-end">
+<button class="flex items-center justify-center gap-2 px-4 py-2 bg-[#f0f2f4] text-[#111418] text-sm font-bold rounded-lg hover:bg-gray-200 transition-colors w-full sm:w-auto">
+<span class="material-symbols-outlined text-base">download</span>
+<span>Tải Về</span>
+</button>
+<button class="flex items-center justify-center gap-2 px-4 py-2 bg-primary text-white text-sm font-bold rounded-lg hover:bg-blue-600 transition-colors w-full sm:w-auto">
+<span class="material-symbols-outlined text-base">headphones</span>
+<span>Nghe</span>
+</button>
+</div>
+</div>
+</div>
+</details>
+<!-- Accordion 3: Documents -->
+<details class="group bg-white rounded-xl border border-[#dbe0e6] shadow-sm overflow-hidden">
+<summary class="flex cursor-pointer items-center justify-between gap-4 p-5 bg-white hover:bg-gray-50 transition-colors select-none">
+<div class="flex items-center gap-4">
+<div class="bg-primary/10 p-2 rounded-lg text-primary">
+<span class="material-symbols-outlined">folder_open</span>
+</div>
+<div>
+<h3 class="text-[#111418] text-lg font-bold">Biểu Mẫu &amp; Văn Bản (Forms &amp; Documents)</h3>
+<p class="text-[#617589] text-sm">Tờ khai hôn phối, Rửa tội, và thông báo</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-[#617589] transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-5 border-t border-[#f0f2f4] bg-gray-50/50 grid grid-cols-1 sm:grid-cols-2 gap-4">
+<!-- Doc Card 1 -->
+<div class="bg-white p-4 rounded-lg border border-[#e5e7eb] flex items-start gap-3 hover:border-primary transition-colors cursor-pointer group/doc">
+<div class="text-red-500 bg-red-50 p-2 rounded">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</div>
+<div>
+<h5 class="text-[#111418] font-bold text-sm group-hover/doc:text-primary">Đơn Xin Rửa Tội (Trẻ Em)</h5>
+<p class="text-[#617589] text-xs mt-1">PDF • 1.2 MB</p>
+</div>
+<div class="ml-auto text-[#617589]">
+<span class="material-symbols-outlined text-lg">download</span>
+</div>
+</div>
+<!-- Doc Card 2 -->
+<div class="bg-white p-4 rounded-lg border border-[#e5e7eb] flex items-start gap-3 hover:border-primary transition-colors cursor-pointer group/doc">
+<div class="text-red-500 bg-red-50 p-2 rounded">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</div>
+<div>
+<h5 class="text-[#111418] font-bold text-sm group-hover/doc:text-primary">Tờ Khai Hôn Phối</h5>
+<p class="text-[#617589] text-xs mt-1">PDF • 2.4 MB</p>
+</div>
+<div class="ml-auto text-[#617589]">
+<span class="material-symbols-outlined text-lg">download</span>
+</div>
+</div>
+<!-- Doc Card 3 -->
+<div class="bg-white p-4 rounded-lg border border-[#e5e7eb] flex items-start gap-3 hover:border-primary transition-colors cursor-pointer group/doc">
+<div class="text-blue-500 bg-blue-50 p-2 rounded">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<h5 class="text-[#111418] font-bold text-sm group-hover/doc:text-primary">Lịch Sinh Hoạt Mục Vụ 2024</h5>
+<p class="text-[#617589] text-xs mt-1">DOCX • 500 KB</p>
+</div>
+<div class="ml-auto text-[#617589]">
+<span class="material-symbols-outlined text-lg">download</span>
+</div>
+</div>
+<!-- Doc Card 4 -->
+<div class="bg-white p-4 rounded-lg border border-[#e5e7eb] flex items-start gap-3 hover:border-primary transition-colors cursor-pointer group/doc">
+<div class="text-red-500 bg-red-50 p-2 rounded">
+<span class="material-symbols-outlined">picture_as_pdf</span>
+</div>
+<div>
+<h5 class="text-[#111418] font-bold text-sm group-hover/doc:text-primary">Bản Tin Hiệp Thông Tuần Này</h5>
+<p class="text-[#617589] text-xs mt-1">PDF • 3.1 MB</p>
+</div>
+<div class="ml-auto text-[#617589]">
+<span class="material-symbols-outlined text-lg">download</span>
+</div>
+</div>
+</div>
+</details>
+</div>
+</div>
+<!-- Right Column: Sidebar / Quick Links -->
+<aside class="w-full lg:w-80 shrink-0 flex flex-col gap-6">
+<!-- Mass Times Widget -->
+<div class="bg-white rounded-xl shadow-sm border border-[#dbe0e6] p-5">
+<div class="flex items-center gap-2 mb-4">
+<span class="material-symbols-outlined text-primary-gold">schedule</span>
+<h3 class="text-[#111418] font-bold text-lg">Giờ Lễ</h3>
+</div>
+<ul class="flex flex-col gap-3">
+<li class="flex justify-between items-center pb-2 border-b border-dashed border-gray-200">
+<span class="text-sm font-medium text-gray-600">Ngày thường</span>
+<span class="text-sm font-bold text-[#111418]">05:00 &amp; 17:30</span>
+</li>
+<li class="flex justify-between items-center pb-2 border-b border-dashed border-gray-200">
+<span class="text-sm font-medium text-gray-600">Thứ Bảy</span>
+<span class="text-sm font-bold text-[#111418]">17:30 (Lễ I CN)</span>
+</li>
+<li class="flex justify-between items-center">
+<span class="text-sm font-medium text-gray-600">Chúa Nhật</span>
+<span class="text-sm font-bold text-[#111418] text-right">05:00, 07:30,<br/>16:00, 18:30</span>
+</li>
+</ul>
+<button class="mt-4 w-full py-2 bg-[#f0f2f4] text-[#111418] text-sm font-bold rounded-lg hover:bg-gray-200 transition-colors">
+                        Xem Chi Tiết
+                    </button>
+</div>
+<!-- Featured / Contact Widget -->
+<div class="bg-primary text-white rounded-xl shadow-md p-6 relative overflow-hidden">
+<!-- Decor background circle -->
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-white/10 rounded-full"></div>
+<h3 class="font-bold text-lg mb-2 relative z-10">Cần giúp đỡ?</h3>
+<p class="text-white/80 text-sm mb-4 relative z-10">Liên hệ với văn phòng giáo xứ nếu bạn cần hỗ trợ về các thủ tục Bí Tích.</p>
+<div class="flex items-center gap-3 mb-4 relative z-10">
+<span class="material-symbols-outlined text-xl">call</span>
+<span class="font-bold text-lg">090 123 4567</span>
+</div>
+<button class="w-full bg-white text-primary font-bold py-2 rounded-lg text-sm hover:bg-gray-50 transition-colors relative z-10">
+                        Gửi Tin Nhắn
+                    </button>
+</div>
+<!-- Quick Links -->
+<div class="bg-white rounded-xl shadow-sm border border-[#dbe0e6] p-5">
+<h3 class="text-[#111418] font-bold text-lg mb-3">Liên Kết Nhanh</h3>
+<ul class="flex flex-col gap-2">
+<li><a class="text-sm text-[#617589] hover:text-primary flex items-center gap-2" href="#"><span class="material-symbols-outlined text-sm">chevron_right</span>Lớp Giáo Lý</a></li>
+<li><a class="text-sm text-[#617589] hover:text-primary flex items-center gap-2" href="#"><span class="material-symbols-outlined text-sm">chevron_right</span>Ca Đoàn</a></li>
+<li><a class="text-sm text-[#617589] hover:text-primary flex items-center gap-2" href="#"><span class="material-symbols-outlined text-sm">chevron_right</span>Hội Đồng Mục Vụ</a></li>
+<li><a class="text-sm text-[#617589] hover:text-primary flex items-center gap-2" href="#"><span class="material-symbols-outlined text-sm">chevron_right</span>Lịch Công Giáo</a></li>
+</ul>
+</div>
+</aside>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white border-t pt-16 pb-8 mt-16">
+  <div class="max-w-7xl mx-auto px-20">
+
+    <div class="grid grid-cols-4 gap-12 mb-12">
+
+      <!-- Info -->
+      <div class="space-y-4">
+        <div class="flex items-center gap-2 font-bold text-lg">
+          <span class="material-symbols-outlined text-primary">church</span>
+          Giáo xứ Ngũ Phúc
+        </div>
+        <p class="text-sm text-gray-600">
+          Cộng đoàn chào đón, tận tâm với đức tin, phục vụ và rao giảng Tin Mừng.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h4 class="font-bold mb-3">Liên kết nhanh</h4>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li>Lịch lễ</li>
+          <li>Bản tin Giáo xứ</li>
+          <li>Quyên góp trực tuyến</li>
+          <li>Đăng ký thành viên</li>
+          <li>Thư viện ảnh</li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-bold mb-3">Liên hệ</h4>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li>Hố Nai 3, Trảng Bom, Đồng Nai</li>
+          <li>(028) 3845 6789</li>
+          <li>giaoxu@nguphuc.org</li>
+        </ul>
+      </div>
+
+      <!-- Office -->
+      <div>
+        <h4 class="font-bold mb-3">Giờ văn phòng</h4>
+        <p class="text-sm text-gray-600">
+          Thứ 2 - Thứ 6: 8:00 - 17:00<br>
+          Thứ 7: 8:00 - 12:00<br>
+          Chúa nhật: Đóng cửa
+        </p>
+      </div>
+
+    </div>
+
+    <div class="border-t pt-6 flex justify-between text-xs text-gray-500">
+      <p>© 2023 Giáo xứ Ngũ Phúc. Bảo lưu mọi quyền.</p>
+      <div class="flex gap-6">
+        <span>Chính sách bảo mật</span>
+        <span>Điều khoản dịch vụ</span>
+        <span>Sơ đồ trang</span>
+      </div>
+    </div>
+
+  </div>
+</footer>
+</body></html>

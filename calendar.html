@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+
+<html class="light" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Lịch Phụng Vụ - Giáo xứ Ngũ Phúc</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "secondary": "#10b981", // Emerald green for Sacraments
+                        "accent": "#f59e0b", // Gold for Special Events
+                        "neutral": "#6366f1", // Purple/Indigo for Activities
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for better aesthetics inside calendar if needed */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 4px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111418] dark:text-white">
+<div class="relative flex h-auto min-h-screen w-full flex-col overflow-x-hidden">
+<!-- Header -->
+<header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-[#f0f2f4] dark:bg-background-dark/95 dark:border-white/10 shadow-sm">
+  <div class="px-20 mx-auto max-w-7xl">
+    <div class="flex h-20 items-center justify-between gap-4">
+
+      <!-- Logo Area -->
+      <a class="flex items-center gap-3 text-[#111418] dark:text-white shrink-0 group" href="#">
+        <div class="size-10 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+          <span class="material-symbols-outlined text-2xl">church</span>
+        </div>
+        <h1 class="text-lg font-bold tracking-[-0.015em]">
+          Giáo xứ Ngũ Phúc
+        </h1>
+      </a>
+
+      <!-- Desktop Navigation (luôn hiển thị) -->
+      <nav class="flex items-center gap-1">
+        <a href="./index.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Trang chủ</a>
+        <a href="./About.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Giới thiệu</a>
+        <a href="./news.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Tin tức</a>
+        <a href="./calendar.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Lịch</a>
+        <a href="./HoiDoan.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Đoàn thể</a>
+        <a href="./document.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Thư viện</a>
+        <a href="./signup.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Đăng ký</a>
+        <a href="./contact.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Liên hệ</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-3">
+        <button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary hover:bg-primary-dark text-white shadow-md">
+          <span class="material-symbols-outlined">campaign</span>
+        </button>
+        <button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary hover:bg-primary-dark text-white shadow-md">
+          <span class="material-symbols-outlined">person</span>
+        </button>
+        <button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary hover:bg-primary-dark text-white shadow-md">
+          <span class="material-symbols-outlined">settings</span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button (giữ element, bỏ responsive) -->
+      <button class="p-2 text-gray-600 dark:text-white">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+
+    </div>
+  </div>
+</header>
+<!-- Main Content -->
+<main class="flex-1 flex flex-col items-center py-8 px-4 sm:px-6 lg:px-8">
+<div class="w-full max-w-[1440px] flex flex-col gap-6">
+<!-- Page Heading & Filters -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-2">
+<div class="flex flex-col gap-2">
+<h1 class="text-[#111418] dark:text-white text-3xl md:text-4xl font-black leading-tight tracking-[-0.033em]">Lịch Phụng Vụ</h1>
+<p class="text-[#617589] dark:text-gray-400 text-base font-normal leading-normal max-w-2xl">
+                            Theo dõi lịch thánh lễ, cử hành bí tích và các sự kiện cộng đoàn trong tháng.
+                        </p>
+</div>
+<!-- Filter Chips -->
+<div class="flex flex-wrap gap-2">
+<div class="flex h-9 cursor-pointer items-center justify-center gap-x-2 rounded-full border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 px-4 transition hover:bg-gray-50 dark:hover:bg-gray-700 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+<p class="text-sm font-medium leading-normal">Lọc:</p>
+</div>
+<button class="flex h-9 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-primary/10 border border-primary/20 px-4 text-primary transition hover:bg-primary/20">
+<div class="size-2 rounded-full bg-primary"></div>
+<p class="text-sm font-bold leading-normal">Thánh Lễ</p>
+</button>
+<button class="flex h-9 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-secondary/10 border border-secondary/20 px-4 text-secondary dark:text-emerald-400 transition hover:bg-secondary/20">
+<div class="size-2 rounded-full bg-secondary"></div>
+<p class="text-sm font-medium leading-normal">Bí Tích</p>
+</button>
+<button class="flex h-9 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-neutral/10 border border-neutral/20 px-4 text-neutral dark:text-indigo-400 transition hover:bg-neutral/20">
+<div class="size-2 rounded-full bg-neutral"></div>
+<p class="text-sm font-medium leading-normal">Sinh Hoạt</p>
+</button>
+<button class="flex h-9 cursor-pointer items-center justify-center gap-x-2 rounded-full bg-accent/10 border border-accent/20 px-4 text-yellow-700 dark:text-yellow-400 transition hover:bg-accent/20">
+<div class="size-2 rounded-full bg-accent"></div>
+<p class="text-sm font-medium leading-normal">Sự Kiện</p>
+</button>
+</div>
+</div>
+<!-- Calendar Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
+<!-- Main Calendar (Takes up 3/4 width on large screens) -->
+<div class="lg:col-span-3 bg-white dark:bg-[#1a202c] rounded-xl shadow-sm border border-[#e5e7eb] dark:border-[#2a3441] overflow-hidden flex flex-col">
+<!-- Calendar Toolbar -->
+<div class="flex items-center justify-between p-4 border-b border-[#e5e7eb] dark:border-[#2a3441]">
+<div class="flex items-center gap-2">
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<button class="p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+<h2 class="text-xl font-bold ml-2">Tháng 10 2023</h2>
+</div>
+<div class="flex gap-2">
+<button class="hidden sm:flex px-4 py-2 text-sm font-medium border border-gray-200 dark:border-gray-700 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800">Hôm nay</button>
+<div class="flex bg-gray-100 dark:bg-gray-800 rounded-lg p-1">
+<button class="px-3 py-1 text-xs font-medium bg-white dark:bg-gray-600 shadow rounded-md">Tháng</button>
+<button class="px-3 py-1 text-xs font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Tuần</button>
+<button class="px-3 py-1 text-xs font-medium text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white">Ngày</button>
+</div>
+</div>
+</div>
+<!-- Days of Week Header -->
+<div class="grid grid-cols-7 border-b border-[#e5e7eb] dark:border-[#2a3441] bg-gray-50 dark:bg-gray-900">
+<div class="py-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wide">CN</div>
+<div class="py-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wide">T2</div>
+<div class="py-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wide">T3</div>
+<div class="py-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wide">T4</div>
+<div class="py-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wide">T5</div>
+<div class="py-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wide">T6</div>
+<div class="py-3 text-center text-xs font-semibold text-gray-500 uppercase tracking-wide">T7</div>
+</div>
+<!-- Calendar Grid -->
+<div class="grid grid-cols-7 auto-rows-fr h-[600px] lg:h-[720px] bg-[#e5e7eb] dark:bg-[#2a3441] gap-[1px]">
+<!-- Previous Month Days -->
+<div class="bg-white dark:bg-[#1a202c] p-2 min-h-[80px] opacity-50">
+<span class="text-sm font-medium text-gray-400">25</span>
+</div>
+<div class="bg-white dark:bg-[#1a202c] p-2 min-h-[80px] opacity-50">
+<span class="text-sm font-medium text-gray-400">26</span>
+</div>
+<div class="bg-white dark:bg-[#1a202c] p-2 min-h-[80px] opacity-50">
+<span class="text-sm font-medium text-gray-400">27</span>
+</div>
+<div class="bg-white dark:bg-[#1a202c] p-2 min-h-[80px] opacity-50">
+<span class="text-sm font-medium text-gray-400">28</span>
+</div>
+<div class="bg-white dark:bg-[#1a202c] p-2 min-h-[80px] opacity-50">
+<span class="text-sm font-medium text-gray-400">29</span>
+</div>
+<div class="bg-white dark:bg-[#1a202c] p-2 min-h-[80px] opacity-50">
+<span class="text-sm font-medium text-gray-400">30</span>
+</div>
+<!-- Current Month -->
+<!-- Day 1 -->
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="text-sm font-semibold text-gray-700 dark:text-gray-300 w-7 h-7 flex items-center justify-center rounded-full group-hover:bg-gray-200 dark:group-hover:bg-gray-700">1</span>
+</div>
+<div class="flex flex-col gap-1 overflow-hidden">
+<div class="bg-primary/10 text-primary border-l-2 border-primary text-[10px] lg:text-xs px-1.5 py-0.5 rounded-sm truncate font-medium">
+                                        17:30 - Lễ Chiều
+                                    </div>
+</div>
+</div>
+<!-- Day 2 -->
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="text-sm font-semibold text-gray-700 dark:text-gray-300 w-7 h-7 flex items-center justify-center rounded-full group-hover:bg-gray-200 dark:group-hover:bg-gray-700">2</span>
+</div>
+<div class="flex flex-col gap-1 overflow-hidden">
+<div class="bg-primary/10 text-primary border-l-2 border-primary text-[10px] lg:text-xs px-1.5 py-0.5 rounded-sm truncate font-medium">
+                                        05:00 - Lễ Sáng
+                                    </div>
+<div class="bg-primary/10 text-primary border-l-2 border-primary text-[10px] lg:text-xs px-1.5 py-0.5 rounded-sm truncate font-medium">
+                                        17:30 - Lễ Chiều
+                                    </div>
+</div>
+</div>
+<!-- Day 3 -->
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="text-sm font-semibold text-gray-700 dark:text-gray-300 w-7 h-7 flex items-center justify-center rounded-full group-hover:bg-gray-200 dark:group-hover:bg-gray-700">3</span>
+</div>
+<div class="flex flex-col gap-1 overflow-hidden">
+<div class="bg-primary/10 text-primary border-l-2 border-primary text-[10px] lg:text-xs px-1.5 py-0.5 rounded-sm truncate font-medium">
+                                        05:00 - Lễ Sáng
+                                    </div>
+<div class="bg-neutral/10 text-neutral border-l-2 border-neutral text-[10px] lg:text-xs px-1.5 py-0.5 rounded-sm truncate font-medium">
+                                        19:00 - Họp HĐMV
+                                    </div>
+</div>
+</div>
+<!-- Day 4 -->
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="text-sm font-semibold text-gray-700 dark:text-gray-300 w-7 h-7 flex items-center justify-center rounded-full group-hover:bg-gray-200 dark:group-hover:bg-gray-700">4</span>
+</div>
+<div class="flex flex-col gap-1 overflow-hidden">
+<div class="bg-primary/10 text-primary border-l-2 border-primary text-[10px] lg:text-xs px-1.5 py-0.5 rounded-sm truncate font-medium">
+                                        05:00 - Lễ Sáng
+                                    </div>
+</div>
+</div>
+<!-- Day 5 (Today) -->
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1 relative">
+<div class="flex justify-between items-center">
+<span class="text-sm font-bold text-white w-7 h-7 flex items-center justify-center rounded-full bg-primary shadow-md shadow-primary/30">5</span>
+</div>
+<div class="flex flex-col gap-1 overflow-hidden">
+<div class="bg-primary/10 text-primary border-l-2 border-primary text-[10px] lg:text-xs px-1.5 py-0.5 rounded-sm truncate font-medium">
+                                        05:00 - Lễ Sáng
+                                    </div>
+<div class="bg-secondary/10 text-secondary border-l-2 border-secondary text-[10px] lg:text-xs px-1.5 py-0.5 rounded-sm truncate font-medium">
+                                        16:00 - Giải Tội
+                                    </div>
+</div>
+</div>
+<!-- Day 6 -->
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="text-sm font-semibold text-gray-700 dark:text-gray-300 w-7 h-7 flex items-center justify-center rounded-full group-hover:bg-gray-200 dark:group-hover:bg-gray-700">6</span>
+</div>
+<div class="flex flex-col gap-1 overflow-hidden">
+<div class="bg-primary/10 text-primary border-l-2 border-primary text-[10px] lg:text-xs px-1.5 py-0.5 rounded-sm truncate font-medium">
+                                        05:00 - Lễ Sáng
+                                    </div>
+</div>
+</div>
+<!-- Day 7 -->
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="text-sm font-semibold text-gray-700 dark:text-gray-300 w-7 h-7 flex items-center justify-center rounded-full group-hover:bg-gray-200 dark:group-hover:bg-gray-700">7</span>
+</div>
+<div class="flex flex-col gap-1 overflow-hidden">
+<div class="bg-primary/10 text-primary border-l-2 border-primary text-[10px] lg:text-xs px-1.5 py-0.5 rounded-sm truncate font-medium">
+                                        05:00 - Lễ Sáng
+                                    </div>
+</div>
+</div>
+<!-- Week 2 -->
+<!-- Day 8 (Sunday - Full) -->
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="text-sm font-semibold text-red-500 w-7 h-7 flex items-center justify-center rounded-full group-hover:bg-gray-200 dark:group-hover:bg-gray-700">8</span>
+</div>
+<div class="flex flex-col gap-1 overflow-hidden">
+<div class="bg-accent/10 text-yellow-700 dark:text-yellow-400 border-l-2 border-accent text-[10px] lg:text-xs px-1.5 py-0.5 rounded-sm truncate font-bold">
+                                        Chúa Nhật XXVII TN
+                                    </div>
+<div class="bg-primary/10 text-primary border-l-2 border-primary text-[10px] lg:text-xs px-1.5 py-0.5 rounded-sm truncate font-medium">
+                                        05:00 - Lễ Nhất
+                                    </div>
+<div class="bg-primary/10 text-primary border-l-2 border-primary text-[10px] lg:text-xs px-1.5 py-0.5 rounded-sm truncate font-medium">
+                                        07:30 - Lễ Thiếu Nhi
+                                    </div>
+<div class="bg-primary/10 text-primary border-l-2 border-primary text-[10px] lg:text-xs px-1.5 py-0.5 rounded-sm truncate font-medium">
+                                        17:00 - Lễ Chiều
+                                    </div>
+</div>
+</div>
+<!-- Day 9 -->
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="text-sm font-semibold text-gray-700 dark:text-gray-300 w-7 h-7 flex items-center justify-center rounded-full group-hover:bg-gray-200 dark:group-hover:bg-gray-700">9</span>
+</div>
+<div class="flex flex-col gap-1 overflow-hidden">
+<div class="bg-primary/10 text-primary border-l-2 border-primary text-[10px] lg:text-xs px-1.5 py-0.5 rounded-sm truncate font-medium">
+                                        05:00 - Lễ Sáng
+                                    </div>
+<div class="bg-secondary/10 text-secondary border-l-2 border-secondary text-[10px] lg:text-xs px-1.5 py-0.5 rounded-sm truncate font-medium">
+                                        09:00 - Rửa Tội
+                                    </div>
+</div>
+</div>
+<!-- Fill remaining days with generic content for layout -->
+<!-- Repeating generic blocks for visual completeness -->
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1"><span class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1 mt-1">10</span></div>
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1"><span class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1 mt-1">11</span></div>
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1"><span class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1 mt-1">12</span></div>
+<!-- Day 13 Special -->
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1">
+<div class="flex justify-between items-center">
+<span class="text-sm font-semibold text-gray-700 dark:text-gray-300 w-7 h-7 flex items-center justify-center rounded-full group-hover:bg-gray-200 dark:group-hover:bg-gray-700">13</span>
+</div>
+<div class="flex flex-col gap-1 overflow-hidden">
+<div class="bg-accent/10 text-yellow-700 dark:text-yellow-400 border-l-2 border-accent text-[10px] lg:text-xs px-1.5 py-0.5 rounded-sm truncate font-bold">
+                                        Kỷ Niệm Cung Hiến
+                                    </div>
+<div class="bg-primary/10 text-primary border-l-2 border-primary text-[10px] lg:text-xs px-1.5 py-0.5 rounded-sm truncate font-medium">
+                                        18:00 - Lễ Trọng
+                                    </div>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1"><span class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1 mt-1">14</span></div>
+<!-- Week 3 -->
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1"><span class="text-sm font-semibold text-red-500 ml-1 mt-1">15</span>
+<div class="flex flex-col gap-1 overflow-hidden mt-1">
+<div class="bg-primary/10 text-primary border-l-2 border-primary text-[10px] lg:text-xs px-1.5 py-0.5 rounded-sm truncate font-medium">
+                                        05:00 - Lễ Nhất
+                                    </div>
+<div class="bg-primary/10 text-primary border-l-2 border-primary text-[10px] lg:text-xs px-1.5 py-0.5 rounded-sm truncate font-medium">
+                                        07:30 - Lễ Thiếu Nhi
+                                    </div>
+</div>
+</div>
+<!-- Just filler cells for the rest of the month -->
+<!-- Using a small JS loop isn't allowed, so static HTML -->
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1"><span class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1 mt-1">16</span></div>
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1"><span class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1 mt-1">17</span></div>
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1"><span class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1 mt-1">18</span></div>
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1"><span class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1 mt-1">19</span></div>
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1"><span class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1 mt-1">20</span>
+<div class="flex flex-col gap-1 overflow-hidden mt-1">
+<div class="bg-neutral/10 text-neutral border-l-2 border-neutral text-[10px] lg:text-xs px-1.5 py-0.5 rounded-sm truncate font-medium">
+                                        19:30 - Ca Đoàn
+                                    </div>
+</div>
+</div>
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1"><span class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1 mt-1">21</span></div>
+<!-- Week 4 -->
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1"><span class="text-sm font-semibold text-red-500 ml-1 mt-1">22</span></div>
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1"><span class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1 mt-1">23</span></div>
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1"><span class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1 mt-1">24</span></div>
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1"><span class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1 mt-1">25</span></div>
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1"><span class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1 mt-1">26</span></div>
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1"><span class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1 mt-1">27</span></div>
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1"><span class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1 mt-1">28</span></div>
+<!-- Week 5 -->
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1"><span class="text-sm font-semibold text-red-500 ml-1 mt-1">29</span></div>
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1"><span class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1 mt-1">30</span></div>
+<div class="bg-white dark:bg-[#1a202c] p-1 lg:p-2 min-h-[80px] hover:bg-gray-50 dark:hover:bg-gray-800 transition group cursor-pointer flex flex-col gap-1"><span class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1 mt-1">31</span>
+<div class="flex flex-col gap-1 overflow-hidden mt-1">
+<div class="bg-accent/10 text-yellow-700 dark:text-yellow-400 border-l-2 border-accent text-[10px] lg:text-xs px-1.5 py-0.5 rounded-sm truncate font-bold">
+                                       Lễ Các Thánh
+                                   </div>
+</div>
+</div>
+<!-- Next Month -->
+<div class="bg-white dark:bg-[#1a202c] p-2 min-h-[80px] opacity-50"><span class="text-sm font-medium text-gray-400">1</span></div>
+<div class="bg-white dark:bg-[#1a202c] p-2 min-h-[80px] opacity-50"><span class="text-sm font-medium text-gray-400">2</span></div>
+<div class="bg-white dark:bg-[#1a202c] p-2 min-h-[80px] opacity-50"><span class="text-sm font-medium text-gray-400">3</span></div>
+<div class="bg-white dark:bg-[#1a202c] p-2 min-h-[80px] opacity-50"><span class="text-sm font-medium text-gray-400">4</span></div>
+</div>
+</div>
+<!-- Sidebar Content -->
+<div class="lg:col-span-1 flex flex-col gap-6">
+<!-- Mini Summary Widget -->
+<div class="bg-white dark:bg-[#1a202c] rounded-xl shadow-sm border border-[#e5e7eb] dark:border-[#2a3441] p-5">
+<h3 class="text-lg font-bold mb-4 text-[#111418] dark:text-white flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">schedule</span>
+                                Giờ Lễ Thường Xuyên
+                            </h3>
+<div class="flex flex-col gap-4">
+<div>
+<p class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Ngày Thường (T2 - T7)</p>
+<div class="flex gap-2">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-md text-sm font-bold">05:00</span>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-md text-sm font-bold">17:30</span>
+</div>
+</div>
+<div class="h-px bg-gray-100 dark:bg-gray-800 w-full"></div>
+<div>
+<p class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Chúa Nhật</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-accent/10 text-yellow-700 dark:text-yellow-400 border border-accent/20 px-3 py-1 rounded-md text-sm font-bold">05:00</span>
+<span class="bg-accent/10 text-yellow-700 dark:text-yellow-400 border border-accent/20 px-3 py-1 rounded-md text-sm font-bold">07:30</span>
+<span class="bg-accent/10 text-yellow-700 dark:text-yellow-400 border border-accent/20 px-3 py-1 rounded-md text-sm font-bold">16:30</span>
+<span class="bg-accent/10 text-yellow-700 dark:text-yellow-400 border border-accent/20 px-3 py-1 rounded-md text-sm font-bold">18:30</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Selected Event Detail (Simulated) -->
+<div class="bg-white dark:bg-[#1a202c] rounded-xl shadow-sm border border-[#e5e7eb] dark:border-[#2a3441] overflow-hidden">
+<div class="bg-primary h-2 w-full"></div>
+<div class="p-5">
+<span class="text-xs font-bold text-primary uppercase tracking-wider mb-2 block">Chi tiết sự kiện</span>
+<h3 class="text-xl font-black text-[#111418] dark:text-white mb-2">Thánh Lễ Sáng</h3>
+<div class="flex items-center gap-3 text-gray-600 dark:text-gray-300 text-sm mb-4">
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">calendar_month</span>
+<span>5/10/2023</span>
+</div>
+<div class="flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px]">schedule</span>
+<span>05:00 - 06:00</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="flex gap-3">
+<div class="bg-gray-100 dark:bg-gray-800 rounded-full p-2 h-fit">
+<span class="material-symbols-outlined text-[20px] text-gray-600 dark:text-gray-400">person</span>
+</div>
+<div>
+<p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Chủ tế</p>
+<p class="text-sm font-semibold text-[#111418] dark:text-white">Cha Giuse Nguyễn Văn A</p>
+</div>
+</div>
+<div class="flex gap-3">
+<div class="bg-gray-100 dark:bg-gray-800 rounded-full p-2 h-fit">
+<span class="material-symbols-outlined text-[20px] text-gray-600 dark:text-gray-400">menu_book</span>
+</div>
+<div>
+<p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Phụng vụ Lời Chúa</p>
+<p class="text-sm font-semibold text-[#111418] dark:text-white">Thứ 5 Tuần XXVI Thường Niên</p>
+</div>
+</div>
+<div class="flex gap-3">
+<div class="bg-gray-100 dark:bg-gray-800 rounded-full p-2 h-fit">
+<span class="material-symbols-outlined text-[20px] text-gray-600 dark:text-gray-400">location_on</span>
+</div>
+<div>
+<p class="text-xs text-gray-500 dark:text-gray-400 font-medium">Địa điểm</p>
+<p class="text-sm font-semibold text-[#111418] dark:text-white">Nhà Thờ Lớn</p>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 border-t border-gray-100 dark:border-gray-800">
+<button class="w-full py-2.5 rounded-lg border border-gray-200 dark:border-gray-700 text-sm font-bold text-gray-700 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 transition">Xem chi tiết &amp; bài đọc</button>
+</div>
+</div>
+</div>
+<!-- Image Widget -->
+<div class="relative rounded-xl overflow-hidden shadow-sm h-48 group cursor-pointer">
+<img alt="Catholic church interior with candles and altar" class="absolute inset-0 w-full h-full object-cover transition duration-500 group-hover:scale-110" data-alt="Inside a peaceful church sanctuary with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBxBuwZQImo878IFYF7RWX5kB5HWrwZIQpfJS5B1kG7ObviwLBuYm48-Eqq8TCT6bOE89f9G7i0fRlhdTVSUc7wVfiI7Q-xErR6yrXkrw_VJ8s4-7h6c10pPH2mT1oF5I75porgJrisI2kT9YBuB_a_0Pe53mtERtrSZN2Y1TK9s_7GlJEzkVNhERIamSnwG2gSAvdPXMNe8l6rINV3tvPG0QcuEAQQuOiKnTuTfAo4jtX0S9kMxjQmjYszrj9sWatZga1iTGSAT6A"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex flex-col justify-end p-5">
+<p class="text-white font-bold text-lg">Đăng ký Rửa Tội</p>
+<p class="text-white/80 text-sm">Tìm hiểu thủ tục và đặt lịch hẹn</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="bg-white border-t pt-16 pb-8 mt-16">
+  <div class="max-w-7xl mx-auto px-20">
+
+    <div class="grid grid-cols-4 gap-12 mb-12">
+
+      <!-- Info -->
+      <div class="space-y-4">
+        <div class="flex items-center gap-2 font-bold text-lg">
+          <span class="material-symbols-outlined text-primary">church</span>
+          Giáo xứ Ngũ Phúc
+        </div>
+        <p class="text-sm text-gray-600">
+          Cộng đoàn chào đón, tận tâm với đức tin, phục vụ và rao giảng Tin Mừng.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h4 class="font-bold mb-3">Liên kết nhanh</h4>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li>Lịch lễ</li>
+          <li>Bản tin Giáo xứ</li>
+          <li>Quyên góp trực tuyến</li>
+          <li>Đăng ký thành viên</li>
+          <li>Thư viện ảnh</li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-bold mb-3">Liên hệ</h4>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li>Hố Nai 3, Trảng Bom, Đồng Nai</li>
+          <li>(028) 3845 6789</li>
+          <li>giaoxu@nguphuc.org</li>
+        </ul>
+      </div>
+
+      <!-- Office -->
+      <div>
+        <h4 class="font-bold mb-3">Giờ văn phòng</h4>
+        <p class="text-sm text-gray-600">
+          Thứ 2 - Thứ 6: 8:00 - 17:00<br>
+          Thứ 7: 8:00 - 12:00<br>
+          Chúa nhật: Đóng cửa
+        </p>
+      </div>
+
+    </div>
+
+    <div class="border-t pt-6 flex justify-between text-xs text-gray-500">
+      <p>© 2023 Giáo xứ Ngũ Phúc. Bảo lưu mọi quyền.</p>
+      <div class="flex gap-6">
+        <span>Chính sách bảo mật</span>
+        <span>Điều khoản dịch vụ</span>
+        <span>Sơ đồ trang</span>
+      </div>
+    </div>
+
+  </div>
+</footer>
+</div>
+</body></html>

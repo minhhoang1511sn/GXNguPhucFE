@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html class="light" lang="vi">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=1280" name="viewport"/>
+<title>Giáo xứ Ngũ Phúc</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet"/>
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        "primary": "#137fec",
+        "primary-dark": "#0b5ed7",
+        "accent-green": "#4a9f5d",
+        "accent-gold": "#d4af37",
+        "background-light": "#f6f7f8",
+        "background-dark": "#101922",
+      },
+      fontFamily: {
+        "display": ["Inter", "Noto Sans", "sans-serif"],
+        "body": ["Inter", "Noto Sans", "sans-serif"]
+      },
+      borderRadius: {
+        "DEFAULT": "0.5rem",
+        "lg": "0.75rem",
+        "xl": "1rem",
+        "full": "9999px"
+      },
+    },
+  },
+}
+</script>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111418] antialiased">
+
+<!-- Top Navigation -->
+<header class="sticky top-0 z-50 w-full bg-white/95 backdrop-blur-sm border-b border-[#f0f2f4] dark:bg-background-dark/95 dark:border-white/10 shadow-sm">
+  <div class="px-20 mx-auto max-w-7xl">
+    <div class="flex h-20 items-center justify-between gap-4">
+
+      <!-- Logo Area -->
+      <a class="flex items-center gap-3 text-[#111418] dark:text-white shrink-0 group" href="#">
+        <div class="size-10 bg-primary/10 rounded-full flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+          <span class="material-symbols-outlined text-2xl">church</span>
+        </div>
+        <h1 class="text-lg font-bold tracking-[-0.015em]">
+          Giáo xứ Ngũ Phúc
+        </h1>
+      </a>
+
+      <!-- Desktop Navigation (luôn hiển thị) -->
+      <nav class="flex items-center gap-1">
+        <a href="./index.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Trang chủ</a>
+        <a href="./About.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Giới thiệu</a>
+        <a href="./news.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Tin tức</a>
+        <a href="./calendar.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Lịch</a>
+        <a href="./HoiDoan.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Đoàn thể</a>
+        <a href="./document.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Thư viện</a>
+        <a href="./signup.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Đăng ký</a>
+        <a href="./contact.html" class="px-4 py-2 text-sm font-semibold hover:text-primary hover:bg-primary/5 rounded-lg transition-all">Liên hệ</a>
+      </nav>
+
+      <!-- Actions -->
+      <div class="flex items-center gap-3">
+        <button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary hover:bg-primary-dark text-white shadow-md">
+          <span class="material-symbols-outlined">campaign</span>
+        </button>
+        <button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary hover:bg-primary-dark text-white shadow-md">
+          <span class="material-symbols-outlined">person</span>
+        </button>
+        <button class="h-10 w-10 flex items-center justify-center rounded-full bg-primary hover:bg-primary-dark text-white shadow-md">
+          <span class="material-symbols-outlined">settings</span>
+        </button>
+      </div>
+
+      <!-- Mobile Menu Button (giữ element, bỏ responsive) -->
+      <button class="p-2 text-gray-600 dark:text-white">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+
+    </div>
+  </div>
+</header>
+<!-- Hero Section -->
+<section class="relative w-full h-[600px] flex items-center justify-center bg-gray-900 overflow-hidden">
+
+  <!-- Background Image -->
+  <div class="absolute inset-0 z-0">
+    <div
+      class="w-full h-full bg-cover bg-center bg-no-repeat"
+      style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdd9B04qtpetlZjg-Wmfg4eu5zUGAd-iBQp4ViKPid_CIqWt2X9sH6e3FSpf-eK9sXOCuMUhwu9OChU6HO7QgrKLt6ehNoP_sLXO_KAg_uc_fVx2wML2I0v39Du3OPEFytCvxhcNu_H82koIjwKs5m2K3kdk0JCzVbXvnYHr0olMbda1DmY0pjJrI-tl9YRY-6xyNCytykDoVgsqS1CMZnxwAlMvj_NRcqe1HqPMry6CxzJopBwLamFq82V6ApqfDZhkmbRpIWoSc');">
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-black/60"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 container mx-auto px-20 flex flex-col items-center text-center text-white space-y-6">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/20 backdrop-blur-md border border-white/30 text-xs font-semibold uppercase tracking-wider">
+      <span class="w-2 h-2 rounded-full bg-accent-gold animate-pulse"></span>
+      Chào mừng đến với Giáo xứ
+    </div>
+
+    <h1 class="text-7xl font-black tracking-tight leading-tight drop-shadow-lg">
+      Giáo xứ Ngũ Phúc
+    </h1>
+
+    <p class="text-xl font-medium text-white/90 italic font-serif">
+      "Hiệp thông – Phục vụ – Loan báo Tin Mừng"
+    </p>
+
+    <div class="flex gap-4 mt-8">
+      <button class="h-12 px-8 rounded-lg bg-primary hover:bg-primary-dark text-white font-bold transition-transform hover:-translate-y-0.5 shadow-lg shadow-primary/30 flex items-center gap-2">
+        <span class="material-symbols-outlined">newspaper</span>
+        Tin tức mới nhất
+      </button>
+
+      <button class="h-12 px-8 rounded-lg bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/40 text-white font-bold transition-transform hover:-translate-y-0.5 flex items-center gap-2">
+        <span class="material-symbols-outlined">schedule</span>
+        Lịch lễ hôm nay
+      </button>
+    </div>
+  </div>
+</section>
+<!-- Quick Action Bar -->
+<div class="bg-white dark:bg-background-dark border-b border-gray-100 dark:border-white/5 relative z-20 -mt-8 mx-auto max-w-6xl rounded-xl shadow-xl p-8">
+  <div class="grid grid-cols-4 gap-6">
+
+    <a class="flex flex-col items-center gap-3 group text-center" href="#">
+      <div class="size-14 rounded-full bg-blue-50 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
+        <span class="material-symbols-outlined text-3xl">menu_book</span>
+      </div>
+      <span class="text-sm font-bold">Sách ngày</span>
+    </a>
+
+    <a class="flex flex-col items-center gap-3 group text-center" href="#">
+      <div class="size-14 rounded-full bg-green-50 flex items-center justify-center text-accent-green group-hover:scale-110 transition-transform">
+        <span class="material-symbols-outlined text-3xl">calendar_month</span>
+      </div>
+      <span class="text-sm font-bold">Lịch lễ</span>
+    </a>
+
+    <a class="flex flex-col items-center gap-3 group text-center" href="#">
+      <div class="size-14 rounded-full bg-yellow-50 flex items-center justify-center text-accent-gold group-hover:scale-110 transition-transform">
+        <span class="material-symbols-outlined text-3xl">app_registration</span>
+      </div>
+      <span class="text-sm font-bold">Đăng ký</span>
+    </a>
+
+    <a class="flex flex-col items-center gap-3 group text-center" href="#">
+      <div class="size-14 rounded-full bg-red-50 flex items-center justify-center text-red-500 group-hover:scale-110 transition-transform">
+        <span class="material-symbols-outlined text-3xl">live_tv</span>
+      </div>
+      <span class="text-sm font-bold">Trực tuyến</span>
+    </a>
+
+  </div>
+</div>
+<main class="w-full flex flex-col items-center py-16 gap-16 overflow-hidden">
+<section class="w-full max-w-7xl px-20">
+
+  <div class="flex justify-between items-end mb-8">
+    <div>
+      <h2 class="text-3xl font-black tracking-tight mb-2">Lịch lễ</h2>
+      <p class="text-gray-500">Cùng dự lễ Thánh Thể</p>
+    </div>
+    <a class="text-primary font-semibold hover:underline flex items-center gap-1" href="#">
+      Xem chi tiết
+      <span class="material-symbols-outlined text-sm">arrow_forward</span>
+    </a>
+  </div>
+
+  <div class="grid grid-cols-2 gap-6">
+
+    <!-- Weekday Mass -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+      <div class="bg-primary/5 p-4 border-b border-primary/10 flex justify-between items-center">
+        <h3 class="text-lg font-bold text-primary flex items-center gap-2">
+          <span class="material-symbols-outlined">today</span>
+          Ngày thường
+        </h3>
+        <span class="text-xs font-semibold bg-primary/10 text-primary px-2 py-1 rounded">
+          Thứ 2 - Thứ 7
+        </span>
+      </div>
+
+      <div class="p-6 space-y-4">
+        <div class="flex justify-between border-b border-gray-100 pb-2">
+          <span class="text-gray-600 font-medium">Lễ sáng</span>
+          <span class="text-lg font-bold">5:00 AM</span>
+        </div>
+        <div class="flex justify-between">
+          <span class="text-gray-600 font-medium">Lễ chiều</span>
+          <span class="text-lg font-bold">5:30 PM</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sunday Mass -->
+    <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden ring-1 ring-accent-gold/20">
+      <div class="bg-accent-gold/5 p-4 border-b border-accent-gold/10 flex justify-between items-center">
+        <h3 class="text-lg font-bold text-accent-gold flex items-center gap-2">
+          <span class="material-symbols-outlined">wb_sunny</span>
+          Chủ nhật
+        </h3>
+        <span class="text-xs font-semibold bg-accent-gold/10 text-accent-gold px-2 py-1 rounded">
+          Ngày Chúa
+        </span>
+      </div>
+
+      <div class="p-6 grid grid-cols-2 gap-4">
+        <div class="p-3 bg-gray-50 rounded-lg text-center">
+          <span class="text-xs uppercase font-bold text-gray-500">Sáng 1</span>
+          <span class="block text-xl font-black">5:00 AM</span>
+        </div>
+        <div class="p-3 bg-gray-50 rounded-lg text-center">
+          <span class="text-xs uppercase font-bold text-gray-500">Sáng 2</span>
+          <span class="block text-xl font-black">7:00 AM</span>
+        </div>
+        <div class="p-3 bg-gray-50 rounded-lg text-center">
+          <span class="text-xs uppercase font-bold text-gray-500">Thiếu nhi</span>
+          <span class="block text-xl font-black">8:30 AM</span>
+        </div>
+        <div class="p-3 bg-gray-50 rounded-lg text-center">
+          <span class="text-xs uppercase font-bold text-gray-500">Chiều</span>
+          <span class="block text-xl font-black">4:30 PM</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+<section class="w-full bg-blue-50/50 py-16">
+
+  <div class="max-w-7xl mx-auto px-20">
+    <div class="grid grid-cols-3 gap-10">
+
+      <!-- Thông báo -->
+      <div class="col-span-2 space-y-6">
+
+        <div class="flex items-center gap-3">
+          <div class="p-2 bg-accent-gold/10 rounded-lg text-accent-gold">
+            <span class="material-symbols-outlined">campaign</span>
+          </div>
+          <h2 class="text-2xl font-bold">Thông báo Giáo xứ</h2>
+        </div>
+
+        <div class="bg-white rounded-xl shadow-sm p-6 border-l-4 border-accent-gold">
+          <ul class="space-y-4">
+
+            <li class="flex gap-4 pb-4 border-b border-gray-100">
+              <span class="w-2 h-2 mt-2.5 rounded-full bg-accent-gold"></span>
+              <div>
+                <h4 class="font-bold">Quyên góp đặc biệt Chủ nhật này</h4>
+                <p class="text-sm text-gray-600 mt-1">
+                  Sẽ có quyên góp lần hai để hỗ trợ quỹ từ thiện giáo phận cho nạn nhân lũ lụt.
+                </p>
+              </div>
+            </li>
+
+            <li class="flex gap-4 pb-4 border-b border-gray-100">
+              <span class="w-2 h-2 mt-2.5 rounded-full bg-accent-gold"></span>
+              <div>
+                <h4 class="font-bold">Chuẩn bị Lễ Thánh Giuse</h4>
+                <p class="text-sm text-gray-600 mt-1">
+                  Cầu nguyện tam nhật bắt đầu từ thứ Tư này lúc 5:00 chiều trước lễ.
+                </p>
+              </div>
+            </li>
+
+            <li class="flex gap-4">
+              <span class="w-2 h-2 mt-2.5 rounded-full bg-accent-gold"></span>
+              <div>
+                <h4 class="font-bold">Đăng ký lớp Giáo lý</h4>
+                <p class="text-sm text-gray-600 mt-1">
+                  Đăng ký năm học mới đã mở tại văn phòng Giáo xứ.
+                </p>
+              </div>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Sự kiện -->
+      <div class="space-y-6">
+
+        <div class="flex items-center gap-3">
+          <div class="p-2 bg-primary/10 rounded-lg text-primary">
+            <span class="material-symbols-outlined">event</span>
+          </div>
+          <h2 class="text-2xl font-bold">Sự kiện sắp tới</h2>
+        </div>
+
+        <div class="pl-4 border-l-2 border-gray-200 space-y-8">
+
+          <div class="relative">
+            <div class="absolute -left-[21px] top-1 w-3 h-3 rounded-full bg-primary ring-4 ring-white"></div>
+            <span class="text-xs font-bold text-primary uppercase">25 Tháng 10, 2023</span>
+            <h4 class="font-bold mt-1">Lễ Bổn mạng Giáo xứ</h4>
+            <p class="text-sm text-gray-500">Lễ & Tiệc Cộng đoàn</p>
+          </div>
+
+          <div class="relative">
+            <div class="absolute -left-[21px] top-1 w-3 h-3 rounded-full bg-gray-300 ring-4 ring-white"></div>
+            <span class="text-xs font-bold text-gray-500 uppercase">01 Tháng 11, 2023</span>
+            <h4 class="font-bold mt-1">Lễ Các Thánh</h4>
+            <p class="text-sm text-gray-500">Ngày Lễ trọng</p>
+          </div>
+
+          <div class="relative">
+            <div class="absolute -left-[21px] top-1 w-3 h-3 rounded-full bg-gray-300 ring-4 ring-white"></div>
+            <span class="text-xs font-bold text-gray-500 uppercase">02 Tháng 11, 2023</span>
+            <h4 class="font-bold mt-1">Lễ Các Đẳng Linh hồn</h4>
+            <p class="text-sm text-gray-500">Viếng nghĩa trang & Cầu nguyện</p>
+          </div>
+
+        </div>
+
+        <button class="w-full py-2 text-sm font-semibold text-primary border border-primary/20 rounded-lg hover:bg-primary/5">
+          Xem lịch đầy đủ
+        </button>
+
+      </div>
+
+    </div>
+  </div>
+
+</section>
+<!-- Latest News Grid -->
+<section class="w-full max-w-7xl px-20">
+
+  <div class="flex justify-between items-end mb-8">
+    <div>
+      <h2 class="text-3xl font-black tracking-tight mb-2">Tin tức mới</h2>
+      <p class="text-gray-500">Cập nhật từ cộng đoàn và các ban ngành</p>
+    </div>
+    <a class="text-primary font-semibold hover:underline flex items-center gap-1" href="#">
+      Xem tất cả
+      <span class="material-symbols-outlined text-sm">arrow_forward</span>
+    </a>
+  </div>
+
+  <div class="grid grid-cols-3 gap-6">
+
+    <!-- News Card 1 -->
+    <article class="group flex flex-col bg-white rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-100 overflow-hidden">
+      <div class="h-48 relative overflow-hidden">
+        <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform"
+          style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuCf7bzb4I9bQhv_lw8A12PRNF8qJcB4-xmERJMmS-bHscbSZAROsYxi6RGG24MRfbsI77ryC9J49vk0nDGe3X_15la5RBb_rQMkVhv_xb2P1sLMZPCAijqNaRKKitOvhqxIiLdOuZrQGeS_ScjF_A8YfeLqnl15EDRu0msbOAjzosIy2rVH-MD8R-Av5ZS73b3gHtYSyyGRhuV6HSJcTbKtSJHvCn2ywSbfGivQz1rwBzr54GnpyD-GSCNhnH2sGCs3hD1PqF0tk9I');">
+        </div>
+        <div class="absolute top-3 left-3 bg-white/90 text-xs font-bold px-3 py-1 rounded-full">
+          Cộng đoàn
+        </div>
+      </div>
+
+      <div class="p-5 flex flex-col flex-grow">
+        <span class="text-xs text-gray-500 mb-2 flex items-center gap-1">
+          <span class="material-symbols-outlined text-sm">calendar_today</span>
+          20 Tháng 10, 2023
+        </span>
+        <h3 class="text-lg font-bold mb-3 group-hover:text-primary">
+          Kết quả Lễ hội Thu hoạch
+        </h3>
+        <p class="text-sm text-gray-600 line-clamp-3 mb-4 flex-grow">
+          Lễ hội thu hoạch hàng năm thành công tốt đẹp nhờ sự tận tâm của các tình nguyện viên...
+        </p>
+        <a class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+          Đọc thêm
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- News Card 2 -->
+    <article class="group flex flex-col bg-white rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-100 overflow-hidden">
+      <div class="h-48 relative overflow-hidden">
+        <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform"
+          style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuAprfDD3DN30zxh4GmHV0PpEfADFg5Xx8q3f76bc1AlV3Q7I9FNQYFyVvOuE_ge6oMgDpBKqF4PR52dTJh-jstsAZQ1Ao4o95BA0JsX0QEr0Zt7fjKSVrlbT0IFYPlBP3o-lckjJhO2xBDbvY0FYJR2ndhGPwbmo4MuhfYbunxUYfGtl83eGgXcaQKJ57MLv4qBv5sKbfXhWnhjwuxqJiKNgxakcPfKxyHR0NM8dYLSAjIzChsJpsi4EI0_zGKP_nRIblIQesMU6Jc');">
+        </div>
+        <div class="absolute top-3 left-3 bg-white/90 text-xs font-bold px-3 py-1 rounded-full">
+          Từ thiện
+        </div>
+      </div>
+
+      <div class="p-5 flex flex-col flex-grow">
+        <span class="text-xs text-gray-500 mb-2 flex items-center gap-1">
+          <span class="material-symbols-outlined text-sm">calendar_today</span>
+          18 Tháng 10, 2023
+        </span>
+        <h3 class="text-lg font-bold mb-3 group-hover:text-primary">
+          Đoàn Thanh niên quyên góp từ thiện
+        </h3>
+        <p class="text-sm text-gray-600 line-clamp-3 mb-4 flex-grow">
+          Ban Thanh niên đã quyên góp được hơn 500kg thực phẩm cho trại cứu tế địa phương...
+        </p>
+        <a class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+          Đọc thêm
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+    </article>
+
+    <!-- News Card 3 -->
+    <article class="group flex flex-col bg-white rounded-xl shadow-sm hover:shadow-lg transition-all border border-gray-100 overflow-hidden">
+      <div class="h-48 relative overflow-hidden">
+        <div class="w-full h-full bg-cover bg-center group-hover:scale-105 transition-transform"
+          style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuAPmyKoSBlUBGUSo3scLCKpsTQiT_bbKW1KjQACI0zEjxZs1OF6b4eO4brCfaKS-UWgJEGUTvtqNOWybdECYgnHv9g0FZ5ty8lYX5_9gBlzjZ0Yi2LU74TnWX5MGDa7I00Cf539qvxeHu3SeBGek-MYgVJhuydCST9ofxGI3WwJAda4E8p1rxluqaX0doOjxY8lmUm4b_ue_alhXX6pGvagTd_RRzSesnUepz3HiERfjXrHfzXL_poyVM6o-9IJSG3BY4sZb4JLNuc');">
+        </div>
+        <div class="absolute top-3 left-3 bg-white/90 text-xs font-bold px-3 py-1 rounded-full">
+          Phụng vụ
+        </div>
+      </div>
+
+      <div class="p-5 flex flex-col flex-grow">
+        <span class="text-xs text-gray-500 mb-2 flex items-center gap-1">
+          <span class="material-symbols-outlined text-sm">calendar_today</span>
+          15 Tháng 10, 2023
+        </span>
+        <h3 class="text-lg font-bold mb-3 group-hover:text-primary">
+          Lịch phụng vụ mới
+        </h3>
+        <p class="text-sm text-gray-600 line-clamp-3 mb-4 flex-grow">
+          Từ tháng sau, sẽ có điều chỉnh nhỏ về thời gian xưng tội trong tuần...
+        </p>
+        <a class="text-primary font-bold text-sm flex items-center gap-1 hover:gap-2 transition-all">
+          Đọc thêm
+          <span class="material-symbols-outlined text-sm">arrow_forward</span>
+        </a>
+      </div>
+    </article>
+
+  </div>
+</section>
+</main>
+
+<footer class="bg-white border-t pt-16 pb-8 mt-16">
+  <div class="max-w-7xl mx-auto px-20">
+
+    <div class="grid grid-cols-4 gap-12 mb-12">
+
+      <!-- Info -->
+      <div class="space-y-4">
+        <div class="flex items-center gap-2 font-bold text-lg">
+          <span class="material-symbols-outlined text-primary">church</span>
+          Giáo xứ Ngũ Phúc
+        </div>
+        <p class="text-sm text-gray-600">
+          Cộng đoàn chào đón, tận tâm với đức tin, phục vụ và rao giảng Tin Mừng.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h4 class="font-bold mb-3">Liên kết nhanh</h4>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li>Lịch lễ</li>
+          <li>Bản tin Giáo xứ</li>
+          <li>Quyên góp trực tuyến</li>
+          <li>Đăng ký thành viên</li>
+          <li>Thư viện ảnh</li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <h4 class="font-bold mb-3">Liên hệ</h4>
+        <ul class="space-y-2 text-sm text-gray-600">
+          <li>Hố Nai 3, Trảng Bom, Đồng Nai</li>
+          <li>(028) 3845 6789</li>
+          <li>giaoxu@nguphuc.org</li>
+        </ul>
+      </div>
+
+      <!-- Office -->
+      <div>
+        <h4 class="font-bold mb-3">Giờ văn phòng</h4>
+        <p class="text-sm text-gray-600">
+          Thứ 2 - Thứ 6: 8:00 - 17:00<br>
+          Thứ 7: 8:00 - 12:00<br>
+          Chúa nhật: Đóng cửa
+        </p>
+      </div>
+
+    </div>
+
+    <div class="border-t pt-6 flex justify-between text-xs text-gray-500">
+      <p>© 2023 Giáo xứ Ngũ Phúc. Bảo lưu mọi quyền.</p>
+      <div class="flex gap-6">
+        <span>Chính sách bảo mật</span>
+        <span>Điều khoản dịch vụ</span>
+        <span>Sơ đồ trang</span>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+</body>
+</html>
